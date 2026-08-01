@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studieproject 2026-2027 — Odoo: Voorraad ↔ Boekhouding</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      /*
+      Vorige kleuren (warm crème thema) — bewaard ter referentie:
+      --ink: #2B2620;
+      --ink-dim: #6E6355;
+      --crate: #EEE6D6;
+      --crate-deep: #F6F0E3;
+      --stamp-amber: #E8A33D;
+      --rule: rgba(43,38,32,0.15);
+      */
+      --ink: #FFFFFF;
+      --ink-dim: #C7D9C7;
+      --crate: #0B5A0B;
+      --crate-deep: darkgreen;
+      --kraft: #C79A5F;
+      --kraft-deep: #8C6A3B;
+      --stamp-amber: #FF8C00;
+      --rule: rgba(255,255,255,0.2);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --font-body: 'IBM Plex Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--crate-deep);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 48px);
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      padding: 28px 0 0;
+    }
+    .tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 14px;
+    }
+    .tag-row span.dot {
+      color: var(--stamp-amber);
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 32px 0 24px;
+      position: relative;
+    }
+    .stamp {
+      display: inline-block;
+      border: 2px solid var(--stamp-amber);
+      color: var(--stamp-amber);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      transform: rotate(-3deg);
+      opacity: 0;
+      animation: stampIn 0.5s ease-out 0.15s forwards;
+    }
+    @keyframes stampIn {
+      0% { opacity: 0; transform: rotate(-3deg) scale(1.4); }
+      100% { opacity: 1; transform: rotate(-3deg) scale(1); }
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-top: 22px;
+      max-width: 16ch;
+    }
+    h1 .accent { color: var(--kraft); }
+    .lede {
+      font-size: 18px;
+      color: var(--ink-dim);
+      max-width: 56ch;
+      margin-top: 22px;
+    }
+
+    /* ---------- SECTION SHELL ---------- */
+    section {
+      padding: 22px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stamp-amber);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(24px, 3.4vw, 32px);
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+    p.body-text {
+      color: var(--ink-dim);
+      max-width: 62ch;
+      font-size: 16px;
+    }
+    p.body-text + p.body-text { margin-top: 12px; }
+
+    .editable {
+      color: var(--stamp-amber);
+      border-bottom: 1px dotted var(--stamp-amber);
+    }
+
+    /* ---------- MANIFEST / STEPS (sequential — real process) ---------- */
+    .manifest {
+      margin-top: 8px;
+      border: 1px solid var(--rule);
+    }
+    .manifest-row {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      border-bottom: 1px solid var(--rule);
+    }
+    .manifest-row:last-child { border-bottom: none; }
+    .manifest-num {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--stamp-amber);
+      padding: 18px 0 18px 18px;
+      border-right: 1px dashed var(--rule);
+      display: flex;
+      align-items: flex-start;
+    }
+    .manifest-content {
+      padding: 18px 20px;
+    }
+    .manifest-content h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .manifest-content p {
+      font-size: 14.5px;
+      color: var(--ink-dim);
+    }
+
+    /* ---------- RESULTS GRID ---------- */
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 8px;
+    }
+    @media (max-width: 700px) {
+      .results { grid-template-columns: 1fr; }
+    }
+    .result-cell {
+      background: var(--crate-deep);
+      padding: 22px;
+    }
+    .result-cell .k {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--stamp-amber);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .result-cell .v {
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      text-align: center;
+      padding: 22px 0 40px;
+    }
+    .cta h2 { margin-bottom: 14px; font-size: 13px; color: var(--stamp-amber); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .cta p.body-text { margin: 0 auto 30px; }
+    .stamp-btn {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1B1400;
+      background: var(--stamp-amber);
+      padding: 9px 20px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 3px 3px 0 var(--kraft-deep);
+    }
+    .stamp-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--kraft-deep);
+    }
+    .stamp-btn:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+
+    a.stamp-btn:visited { color: #1B1400; }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <div class="tag-row">
+        <span>Voorstel studieproject <span class="dot">·</span> 2026-2027</span>
+        <span>Bachelor Boekhouding <span class="dot">·</span> VIVES Hogeschool Kortrijk</span>
+      </div>
+    </header>
+
+    <section class="hero" style="border-top:none;">
+      <span class="stamp">Verplichte tijdsregistratie vanaf 1 januari 2027</span>
+      <h1>Van <span class="accent">prikklok</span> naar loonstaat</h1>
+      <p class="lede">
+        Aanvraag voor een studieproject 2026-2027 in een <span class="editable">familiale KMO</span> waarin ik de koppeling tussen de individuele
+        tijdregistratie en de HR-verwerking in kaart breng en een Proof of Concept realiseer dat het bedrijf kan overnemen.
+      </p>
+    </section>
+
+    <section>
+      <div class="eyebrow">Waarom dit onderwerp ?</div>
+      <p class="body-text">
+        Na het regeerakkoord van december 2025 wordt de Europese richtlijn m.b.t. tijdsregistratie in België verplicht vanaf 1 januari 2027.
+      </p>
+      <p class="body-text">
+        Het is nog raden hoe dat concreet zal ingevuld worden op de KMO-werkvloer.
+      </p>
+      <ul class="body-text" style="max-width: 62ch; margin-top: 12px; padding-left: 20px;">
+        <li>Extra modules gepromoveerd door de sociale secretariaten ?</li>
+        <li>Software vendors die na de Peppol-rush een nieuw eldorado toegeworpen krijgen ?</li>
+        <li>Misschien reeds bestaande Excel-files aanpassen om ze GDPR-compliant te maken</li>
+      </ul>
+      <p class="body-text" style="margin-top: 12px;">
+        Rond dit thema wil ik een Proof of Concept maken met voorkeur maar niet noodzakelijk op basis van Odoo technologie.
+      </p>
+    </section>
+
+    <section>
+      <div class="eyebrow">Doelstelling en verwachtingen</div>
+      <p class="body-text">
+        De koppeling tussen prikklokgegevens en loonverwerking in kaart brengen, zodat het bedrijf snel en
+        kostenbewust kan voldoen aan de nieuwe verplichting.
+      </p>
+    </section>
+
+    <section>
+      <div class="eyebrow">5-stappenplan van analyse tot overdracht</div>
+      <div class="manifest">
+        <div class="manifest-row">
+          <div class="manifest-num">01</div>
+          <div class="manifest-content">
+            <h3>Analyse van de huidige situatie</h3>
+            <p>Bestaande systemen waaronder eventuele modules van het sociaal secretariaat en HR-verwerking in kaart brengen.</p>
+          </div>
+        </div>
+        <div class="manifest-row">
+          <div class="manifest-num">02</div>
+          <div class="manifest-content">
+            <h3>Ontwerp van de oplossing</h3>
+            <p>Modules en workflows bepalen in Odoo HR of gelijkwaardige technologie.</p>
+          </div>
+        </div>
+        <div class="manifest-row">
+          <div class="manifest-num">03</div>
+          <div class="manifest-content">
+            <h3>Implementatie in testomgeving</h3>
+            <p>Iteratieve configuraties in een educatieve testomgeving zonder licentie kosten.</p>
+          </div>
+        </div>
+        <div class="manifest-row">
+          <div class="manifest-num">04</div>
+          <div class="manifest-content">
+            <h3>Validatie</h3>
+            <p>Testen, controleren en aftoetsen met gebruikers.</p>
+          </div>
+        </div>
+        <div class="manifest-row">
+          <div class="manifest-num">05</div>
+          <div class="manifest-content">
+            <h3>Documentatie en overdracht</h3>
+            <p>De configuratie start in een educatieve Odoo-online omgeving, maar kan, indien gewenst, naar productie overschakelen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Verwachte resultaten</div>
+      <div class="results">
+        <div class="result-cell">
+          <div class="k">Compliance</div>
+          <div class="v">Tijdsregistratie die voldoet aan de Europese richtlijn vanaf 1 januari 2027.</div>
+        </div>
+        <div class="result-cell">
+          <div class="k">Inzicht</div>
+          <div class="v">Duidelijker zicht op directe en indirecte loonkost voor verdere ratio analyses.</div>
+        </div>
+        <div class="result-cell">
+          <div class="k">Efficiëntie</div>
+          <div class="v">Een toepassing die toegankelijk is via laptop, tablet en smartphone.</div>
+        </div>
+        <div class="result-cell">
+          <div class="k">Continuïteit</div>
+          <div class="v">U beschikt over een Proof of Concept waarmee het bedrijf zelfstandig verder kan.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Wie ben ik ?</div>
+      <p class="body-text">
+        Ik ben een ervaren ICT-duizendpoot en momenteel student Accounting-Fiscaliteit aan de VIVES Hogeschool via
+        afstandsonderwijs. Naast Odoo-configuratie ben ik operationeel inzetbaar voor de verwerking en opvolging
+        van dagelijkse nationale en internationale transacties, inclusief BTW-voorbereiding en administratieve
+        ondersteuning in Odoo en Exact Online.
+      </p>
+    </section>
+
+    <section class="cta">
+      <div class="eyebrow" style="font-size: 20px; margin-bottom: 4px;">Interesse?</div>
+      <h2>Laten we het bespreken</h2>
+      <a class="stamp-btn" href="mailto:mdebuck@gmail.com?subject=Studieproject%202026-2027%20Odoo">
+        Stuur een bericht
+      </a>
+    </section>
+  </div>
+
+</body>
+</html>
