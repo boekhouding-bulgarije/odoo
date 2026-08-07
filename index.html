@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Waarom  Kiezen Belgische KMO's voor Remote Office & Flexi-jobs in Bulgarije?</title>
+<title>Waarom Kiezen Belgische KMO's voor Remote Office & Flexi-jobs in Bulgarije?</title>
 <meta name="description" content="Ontdek waarom steeds meer Belgische KMO's en werknemers kiezen voor een remote office of flexi-job in Bulgarije, Bulgarije: lage belastingen, betaalbare kantoren, tweetalig talent en een veilige EU-hoofdstad.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="DBM Consult">
@@ -43,6 +43,11 @@
   "inLanguage": "nl-BE",
   "about": ["Remote office Bulgarije", "Flexi-jobs Bulgarije", "Belgische KMO's in Bulgarije"]
 }
+
+const t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+if(t)t.onclick=()=>m.classList.toggle('open');
+if(window.self!==window.top){document.getElementById('topnav').style.display='none';}
+
 </script>
 
 <script type="application/ld+json">
@@ -71,7 +76,7 @@
       "name": "Welke taken en functies zijn geschikt voor een remote office in Bulgarije?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Geschikte taken zijn onder meer factuurverwerking, boekhouding debiteurenopvolging, HR-administratie, administratieve ondersteuning, IT-helpdesk en ERP/CRM-maatwerk zoals SAP, Odoo en Salesforce."
+        "text": "Geschikte taken zijn onder meer factuurverwerking, boekhouding, debiteurenopvolging, HR-administratie, administratieve ondersteuning, IT-helpdesk en ERP/CRM-maatwerk zoals SAP, Odoo en Salesforce."
       }
     },
     {
@@ -84,6 +89,11 @@
     }
   ]
 }
+
+const t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+if(t)t.onclick=()=>m.classList.toggle('open');
+if(window.self!==window.top){document.getElementById('topnav').style.display='none';}
+
 </script>
 
 <script type="application/ld+json">
@@ -105,6 +115,11 @@
     }
   ]
 }
+
+const t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+if(t)t.onclick=()=>m.classList.toggle('open');
+if(window.self!==window.top){document.getElementById('topnav').style.display='none';}
+
 </script>
 
 <style>
@@ -441,18 +456,31 @@ h1{
 
 }
 
+
+/* NAV */
+#topnav{position:sticky;top:0;z-index:9999;background:#004d1a;border-bottom:1px solid rgba(255,255,255,.15)}
+.nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
+.nav-container a,#mobileMenu a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.nav-container a:hover,#mobileMenu a:hover{color:#84c341}
+#navToggle{display:none;background:none;border:none;color:#fff;font-size:28px}
+#mobileMenu{display:none;background:#004d1a}
+#mobileMenu a{display:block;text-align:center;padding:12px}
+@media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
+
 </style>
 
 </head>
 
 <body>
+<nav id="topnav"><div class="nav-container">
+<a href="#top">Home</a><a href="#Odoo">Odoo</a><a href="#boekhouding">Boekhouding</a><a href="#sponsors">Sponsors</a><a href="#huisvesting">Co-working</a><a href="#adviesgesprek">Contact</a><button id="navToggle">☰</button></div><div id="mobileMenu"><a href="#top">Home</a><a href="#boekhouding">Odoo Boekhouding</a><a href="#sponsors">Sponsors</a><a href="#huisvesting">Co-working</a><a href="#adviesgesprek">Contact</a></div></nav>
 
 <div class="container">
 
 <main>
 
 <h1>
-Waarom kiezen Belgische KMO's en werknemers voor Remote Office en Flexi-jobs in Bulgarije ?
+Waarom kiezen Belgische KMO's en werknemers voor Remote Office en Flexi-jobs in Bulgarije?
 </h1>
 
 
@@ -462,10 +490,10 @@ Waarom kiezen Belgische KMO's en werknemers voor Remote Office en Flexi-jobs in 
 <svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v16M14 21V9a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v12"/></svg>
 </div>
 
-<h2 id="huisvesting">Betaalbare. kantoren &amp; huisvesting</h2>
+<h2 id="huisvesting">Betaalbare kantoren &amp; huisvesting</h2>
 
 <ul class="bullet-list">
-<li>Ruime kantoren en huisvesting met soepele huurcontracten aan een fractie van de Belgische prijzen. <a href="https://betahaus.bg/en/kbc-global-services-%d1%81-%d0%be%d1%84%d0%b8%d1%81-%d0%b2-betahaus-abc-2/" target="_blank" rel="noopener" style="color:#84c341;text-decoration:underline;font-size:0.75em;">(zie link KBC-Remote)</a></li><li>Aantrekkelijke co-working spaces in de hoofdstad, aan de kust en in de ski-oorden.</li>
+<li>Ruime kantoren en huisvesting met soepele huurcontracten aan een fractie van de Belgische prijzen. </li><li>Aantrekkelijke co-working spaces in de hoofdstad, aan de kust en in de ski-oorden. <a href="https://betahaus.bg/en/kbc-global-services-%d1%81-%d0%be%d1%84%d0%b8%d1%81-%d0%b2-betahaus-abc-2/" target="_blank" rel="noopener" style="color:#84c341;text-decoration:underline;font-size:0.75em;">(zie link KBC-Remote)</a></li>
 </ul>
 
 <ul class="bullet-list">
@@ -486,7 +514,7 @@ Waarom kiezen Belgische KMO's en werknemers voor Remote Office en Flexi-jobs in 
 
 <ul class="bullet-list">
 <li>10% bedrijfsbelasting, 10% personenbelasting, 5% op dividenden en alles is netjes betaald.</li>
-<li>Naast startups bouwen steeds meer alerte 55+ bedrijfsleiders en familie KMO's hier een comfortabele pensioen- en liquidatiereserve op aan 5% zonder 5 jaar wachttijd. Sommigen kijken op een iets langere periode.</li>
+<li>Naast startups bouwen alerte 55+ bedrijfsleiders en familie KMO's hier een comfortabele pensioen- en liquidatiereserve op aan 5% zonder 5 jaar wachttijd. <a href="https://www.practicali.be/blog/begrotingsakkoord-sleutelt-aan-vvprbis-en-liquidatiereserves" target="_blank" rel="noopener" style="color:#84c341;text-decoration:underline;font-size:0.75em;">(zie Staatsblad 01/07/2026)</a></li>
 <li>Schenkingen aan verwanten 0%, 0.4% of 0.8% en niet-verwanten 3.3% à 6.6% in functie van de gemeenten.</li>
 </ul>
 
@@ -674,6 +702,11 @@ Welke taken en functies zijn meest geschikt?
       btn.textContent = 'Verstuur aanvraag';
     });
   });
+
+const t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+if(t)t.onclick=()=>m.classList.toggle('open');
+if(window.self!==window.top){document.getElementById('topnav').style.display='none';}
+
 </script>
 
 </body>
