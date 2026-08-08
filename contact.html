@@ -29,18 +29,13 @@ body{
     min-height:100vh;
 }
 
-/* NAV - verborgen tot na bevestiging van het formulier */
+/* NAV */
 #topnav{
     position:sticky;
     top:0;
     z-index:9999;
     background:#004d1a;
     border-bottom:1px solid rgba(255,255,255,.15);
-    display:none;
-}
-
-#topnav.visible{
-    display:block;
 }
 
 .nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
@@ -322,7 +317,6 @@ h1{
   const status = document.getElementById('formStatus');
   const btn = document.getElementById('submitBtn');
   const formTitle = document.getElementById('adviesgesprek');
-  const topnav = document.getElementById('topnav');
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
@@ -366,7 +360,6 @@ h1{
       status.innerHTML = '<a class="confirm-btn" href="https://dbmconsult.eu" target="_blank" rel="noopener">Bedankt :-)<br>Wij nemen snel contact op.</a>';
       status.className = 'form-status success';
       status.style.display = 'block';
-      topnav.classList.add('visible');
     })
     .catch(function () {
       status.textContent = 'Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.';
