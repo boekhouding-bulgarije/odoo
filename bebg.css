@@ -11,7 +11,7 @@ html, body{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-	background:linear-gradient(135deg,#ff8c00,#ff4500);
+    background:linear-gradient(135deg,#004d1a,#006b23);
     color:white;
     line-height:1.35;
 }
@@ -388,6 +388,9 @@ h1{
 }
 
 .sponsor-card a{
+    display:inline-block;
+    flex-shrink:0;
+    white-space:nowrap;
     background:#84c341;
     color:#004d1a;
     padding:8px 14px;
@@ -395,6 +398,11 @@ h1{
     text-decoration:none;
     font-weight:800;
     font-size:13px;
+    transition:opacity 0.15s ease;
+}
+
+.sponsor-card a:hover{
+    opacity:0.88;
 }
 
 .thanks{
