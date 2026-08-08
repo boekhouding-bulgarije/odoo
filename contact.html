@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Odoo hulpboekhouder administratieve ondersteuning</title>
+<meta name="description" content="Boek een gratis, vrijblijvend adviesgesprek van 30 minuten over Odoo facturatie en boekhouding.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jouw-domein.be/gratis-adviesgesprek.html">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#004d1a,#006b23);
+    color:white;
+    line-height:1.35;
+    min-height:100vh;
+}
+
+.container{
+    max-width:760px;
+    margin:0 auto;
+    padding:24px 20px 18px;
+    width:100%;
+}
+
+h1{
+    text-align:center;
+    font-size:clamp(1.3rem,2.8vw,1.8rem);
+    margin-bottom:14px;
+    font-weight:800;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    color:#c7f0b6;
+    margin-bottom:18px;
+}
+
+.section{
+    padding:0;
+}
+
+.section h2{
+    text-align:center;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    font-weight:700;
+    color:#84c341;
+    margin-bottom:8px;
+}
+
+.icon-circle{
+    width:70px;
+    height:70px;
+    margin:0 auto 8px auto;
+    background:#84c341;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.icon-circle svg{
+    width:32px;
+    height:32px;
+    stroke:#ffffff;
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.small{
+    margin-top:8px;
+    font-size:19px;
+    font-weight:600;
+}
+
+.contact-form{
+    margin-top:0;
+}
+
+.form-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:8px;
+    font-size:16px;
+    font-family:inherit;
+    color:#ffffff;
+    background:rgba(255,255,255,0.08);
+    box-sizing:border-box;
+    resize:vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color:rgba(255,255,255,0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#84c341;
+    background:rgba(255,255,255,0.14);
+}
+
+.contact-form textarea{
+    margin-bottom:14px;
+}
+
+.contact-form button{
+    width:100%;
+    border:none;
+    border-radius:8px;
+    padding:14px;
+    font-size:18px;
+    font-weight:800;
+    color:#004d1a;
+    background:#84c341;
+    cursor:pointer;
+    transition:opacity 0.15s ease;
+}
+
+.contact-form button:hover{
+    opacity:0.88;
+}
+
+.contact-form button:disabled{
+    opacity:0.6;
+    cursor:not-allowed;
+}
+
+.form-status{
+    margin:10px 0 0;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    display:none;
+}
+
+.form-status.error{
+    color:#ffb3c0;
+    display:block;
+}
+
+.form-status.success{
+    color:#c7f0b6;
+    font-size:14px;
+    display:block;
+}
+
+.form-status.success .confirm-btn{
+    display:inline-block;
+    margin-top:6px;
+    padding:12px 20px;
+    background:#84c341;
+    color:#004d1a;
+    font-weight:800;
+    font-size:14px;
+    text-decoration:none;
+    border-radius:8px;
+    text-align:center;
+    line-height:1.4;
+}
+
+.form-status.success .confirm-btn:hover{
+    opacity:0.88;
+}
+
+.site-footer{
+    text-align:center;
+    font-size:12px;
+    color:rgba(255,255,255,0.6);
+    padding:20px 0 10px;
+}
+
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
+
+@media(max-width:768px){
+
+.container{
+    padding:12px 15px;
+    width:100%;
+}
+
+h1{
+    font-size:1.5rem;
+}
+
+.icon-circle{
+    width:60px;
+    height:60px;
+}
+
+.icon-circle svg{
+    width:26px;
+    height:26px;
+}
+
+.form-row{
+    flex-direction:column;
+    gap:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<main>
+
+<section class="section" aria-labelledby="adviesgesprek">
+
+<h2 id="adviesgesprek" class="formTitle visually-hidden">Gratis adviesgesprek aanvragen</h2>
+
+<form id="contactForm" class="contact-form">
+  <div class="form-row">
+    <label for="f-naam" class="visually-hidden">Naam</label>
+    <input type="text" id="f-naam" name="naam" placeholder="Naam *" required>
+    <label for="f-email" class="visually-hidden">Email</label>
+    <input type="email" id="f-email" name="email" placeholder="Email *" required>
+  </div>
+  <div class="form-row">
+    <label for="f-gsm" class="visually-hidden">GSM / WhatsApp / Viber</label>
+    <input type="tel" id="f-gsm" name="gsm" placeholder="GSM / WhatsApp / Viber">
+  </div>
+  <label for="f-beschrijving" class="visually-hidden">Korte beschrijving van jouw project</label>
+  <textarea id="f-beschrijving" name="beschrijving" placeholder="Korte beschrijving van jouw project" rows="3"></textarea>
+  <button type="submit" id="submitBtn">Verstuur aanvraag</button>
+</form>
+<p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
+  const formTitle = document.getElementById('adviesgesprek');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const naam = document.getElementById('f-naam').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const gsm = document.getElementById('f-gsm').value.trim();
+    const beschrijving = document.getElementById('f-beschrijving').value.trim();
+
+    if (!naam || !email) {
+      status.textContent = 'Vul minstens je naam en e-mail in.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Versturen...';
+
+    const formData = new FormData();
+    formData.append('entry.1048386899', naam);
+    formData.append('entry.1415393542', email);
+    formData.append('entry.3958039', gsm);
+    formData.append('entry.19383197', beschrijving);
+    formData.append('fvv', '1');
+
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSewJXPq7muXMS8FJJq8F0zEoPYCHfH4HsHCPVek3QsW3q5ClQ/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    })
+    .then(function () {
+      form.reset();
+      form.style.display = 'none';
+      formTitle.style.display = 'none';
+      status.innerHTML = '<a class="confirm-btn" href="https://dbmconsult.eu" target="_blank" rel="noopener">Bedankt :-)<br>Wij nemen snel contact op.</a>';
+      status.className = 'form-status success';
+      status.style.display = 'block';
+    })
+    .catch(function () {
+      status.textContent = 'Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.';
+      status.className = 'form-status error';
+      btn.disabled = false;
+      btn.textContent = 'Verstuur aanvraag';
+    });
+  });
+</script>
+
+</body>
+</html>
