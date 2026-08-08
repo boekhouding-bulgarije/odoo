@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Odoo Facturatie & Boekhouding | Configuratie, Opleiding &amp; Interim Ondersteuning</title>
+<title>Odoo Facturatie &amp; Boekhouding | Configuratie, Opleiding &amp; Interim Ondersteuning</title>
 <meta name="description" content="Odoo configuratie, opleiding en operationele ondersteuning voor facturatie en boekhouding bij kmo's. Ook beschikbaar als flexi-werkkracht voor interimopdrachten in Odoo-boekhouding.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://dbmconsult.be/odoo-boekhouder-interim-flexi.html">
+<link rel="canonical" href="https://hulpboekhouder.github.io/odoo/odoo-boekhouder-interim-flexi.html">
 <link rel="stylesheet" href="bebg.css">
 <script type="application/ld+json">
 {
@@ -251,6 +251,9 @@ Stappenplan
       btn.textContent = 'Verstuur aanvraag';
     });
   });
+
+  const t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+  if (t) t.onclick = () => m.classList.toggle('open');
 </script>
 
 </body>
