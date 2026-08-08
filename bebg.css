@@ -1,5 +1,3 @@
-<style>
-
 *{
     margin:0;
     padding:0;
@@ -343,4 +341,78 @@ h1{
 #mobileMenu a{display:block;text-align:center;padding:12px}
 @media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
 
-</style>
+/* ==== CSS afkomstig uit sponsors.html ==== */
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:12px 10px;
+    background:rgba(0,0,0,0.25);
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+    padding:8px 12px;
+    border-radius:6px;
+}
+
+.navbar a:hover{
+    background:#84c341;
+    color:#004d1a;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    color:#c7f0b6;
+    margin-bottom:18px;
+}
+
+.sponsor-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.06);
+    border-radius:9px;
+    padding:10px 12px;
+    margin-bottom:8px;
+}
+
+.sponsor-name{
+    font-weight:700;
+}
+
+.sponsor-card a{
+    background:#84c341;
+    color:#004d1a;
+    padding:8px 14px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:13px;
+}
+
+.thanks{
+    text-align:center;
+    color:#c7f0b6;
+    margin-top:18px;
+}
+
+@media(max-width:480px){
+
+.sponsor-card{
+    flex-direction:column;
+    gap:8px;
+}
+
+.sponsor-card a{
+    width:100%;
+    text-align:center;
+}
+
+}
