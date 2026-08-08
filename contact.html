@@ -29,6 +29,28 @@ body{
     min-height:100vh;
 }
 
+/* NAV - verborgen tot na bevestiging van het formulier */
+#topnav{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:#004d1a;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    display:none;
+}
+
+#topnav.visible{
+    display:block;
+}
+
+.nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
+.nav-container a,#mobileMenu a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.nav-container a:hover,#mobileMenu a:hover{color:#84c341}
+#navToggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+#mobileMenu{display:none;background:#004d1a}
+#mobileMenu a{display:block;text-align:center;padding:12px}
+@media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
+
 .container{
     max-width:760px;
     margin:0 auto;
@@ -245,6 +267,25 @@ h1{
 
 <body>
 
+<nav id="topnav">
+  <div class="nav-container">
+    <a href="index.html">Home</a>
+    <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
+    <a href="facturatie-boekhouding-bpo.html">Boekhouding</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="coworking.html">Co-working</a>
+    <a href="contact.html">Contact</a>
+    <button id="navToggle">☰</button>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="odoo-boekhouder-interim-flexi.html">Odoo Boekhouding</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="coworking.html">Co-working</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 <div class="container">
 
 <main>
@@ -281,6 +322,13 @@ h1{
   const status = document.getElementById('formStatus');
   const btn = document.getElementById('submitBtn');
   const formTitle = document.getElementById('adviesgesprek');
+  const topnav = document.getElementById('topnav');
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  navToggle.addEventListener('click', function () {
+    mobileMenu.classList.toggle('open');
+  });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -318,6 +366,7 @@ h1{
       status.innerHTML = '<a class="confirm-btn" href="https://dbmconsult.eu" target="_blank" rel="noopener">Bedankt :-)<br>Wij nemen snel contact op.</a>';
       status.className = 'form-status success';
       status.style.display = 'block';
+      topnav.classList.add('visible');
     })
     .catch(function () {
       status.textContent = 'Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.';
