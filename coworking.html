@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing</title>
 <style>
+  /* NAV (identiek aan de rest van de site) */
+  #topnav{position:sticky;top:0;z-index:9999;background:#004d1a;border-bottom:1px solid rgba(255,255,255,.15)}
+  .nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
+  .nav-container a,#mobileMenu a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+  .nav-container a:hover,#mobileMenu a:hover{color:#84c341}
+  #navToggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer}
+  #mobileMenu{display:none;background:#004d1a}
+  #mobileMenu a{display:block;text-align:center;padding:12px}
+  @media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
+
   :root {
     --accent: #e6296f;
     --text-dark: #1f2a44;
@@ -210,6 +220,25 @@
 </head>
 <body>
 
+<nav id="topnav">
+  <div class="nav-container">
+    <a href="index.html">Home</a>
+    <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
+    <a href="facturatie-boekhouding-bpo.html">Boekhouding</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="coworking.html">Co-working</a>
+    <a href="contact.html">Contact</a>
+    <button id="navToggle">☰</button>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="odoo-boekhouder-interim-flexi.html">Odoo Boekhouding</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="coworking.html">Co-working</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
 <p class="source-note">Bron: <a href="https://betahaus.bg/en/" target="_blank" rel="noopener noreferrer">betahaus.bg/en/</a></p>
 
 <div class="intro">
@@ -299,6 +328,12 @@
   </div>
 
 </div>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+</script>
 
 </body>
 </html>
