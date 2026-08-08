@@ -333,13 +333,13 @@ h1{
 
 /* NAV */
 #topnav{position:sticky;top:0;z-index:9999;background:#004d1a;border-bottom:1px solid rgba(255,255,255,.15)}
-.nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
+.nav-container{max-width:760px;margin:auto;display:flex;justify-content:flex-end;gap:24px;align-items:center;padding:12px}
 .nav-container a,#mobileMenu a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
 .nav-container a:hover,#mobileMenu a:hover{color:#84c341}
 #navToggle{display:none;background:none;border:none;color:#fff;font-size:28px}
 #mobileMenu{display:none;background:#004d1a}
 #mobileMenu a{display:block;text-align:center;padding:12px}
-@media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
+@media(max-width:768px){.nav-container{justify-content:flex-end}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}#mobileMenu a{padding:8px}}
 
 /* ==== CSS afkomstig uit sponsors.html ==== */
 
@@ -405,6 +405,19 @@ h1{
     opacity:0.88;
 }
 
+.sponsor-badge{
+    flex-shrink:0;
+    display:inline-block;
+    padding:8px 16px;
+    background:rgba(255,255,255,0.15);
+    color:rgba(255,255,255,0.75);
+    font-weight:700;
+    font-size:12px;
+    border-radius:7px;
+    white-space:nowrap;
+    text-align:center;
+}
+
 .thanks{
     text-align:center;
     color:#c7f0b6;
@@ -420,6 +433,11 @@ h1{
 
 .sponsor-card a{
     width:100%;
+    text-align:center;
+}
+
+.sponsor-badge{
+    align-self:stretch;
     text-align:center;
 }
 

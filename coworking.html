@@ -9,13 +9,13 @@
 <style>
   /* NAV (lichtroze variant, passend bij de accentkleur van deze pagina) */
   #topnav{position:sticky;top:0;z-index:9999;background:#fce4ef;border-bottom:1px solid #f5c6dd}
-  .nav-container{max-width:760px;margin:auto;display:flex;justify-content:center;gap:24px;align-items:center;padding:12px}
+  .nav-container{max-width:760px;margin:auto;display:flex;justify-content:flex-end;gap:24px;align-items:center;padding:12px}
   .nav-container a,#mobileMenu a{color:#e6296f;text-decoration:none;font-weight:700;font-size:15px}
   .nav-container a:hover,#mobileMenu a:hover{color:#1f2a44}
   #navToggle{display:none;background:none;border:none;color:#e6296f;font-size:28px;cursor:pointer}
   #mobileMenu{display:none;background:#fce4ef}
   #mobileMenu a{display:block;text-align:center;padding:12px}
-  @media(max-width:768px){.nav-container{justify-content:space-between}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}}
+  @media(max-width:768px){.nav-container{justify-content:flex-end}.nav-container>a{display:none}#navToggle{display:block}#mobileMenu.open{display:block}#mobileMenu a{padding:8px}}
 
   :root {
     --accent: #e6296f;
