@@ -442,3 +442,29 @@ h1{
 }
 
 }
+.hero-image{
+    display:block;
+    width:100%;
+    max-width:350px;
+    max-height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin:12px auto 18px auto;
+}
+
+@media(max-width:768px){
+.hero-image{
+    max-width:280px;
+    max-height:180px;
+}
+}
+Et dans ton HTML, juste après le <h1> :
+
+html
+<img src="https://hulpboekhouder.github.io/odoo/images/waarom-bulgarije-og.jpg" 
+     alt="Remote office en flexi-jobs in Bulgarije voor Belgische KMO's" 
+     class="hero-image"
+     loading="lazy">
+Ajuste max-width et max-height si tu la veux encore plus petite (par exemple 250px / 160px).
+
+
