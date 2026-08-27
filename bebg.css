@@ -10,7 +10,6 @@
 
 html {
     width: 100%;
-    max-width: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -18,25 +17,26 @@ html {
 
 body {
     width: 100%;
-    max-width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #004d1a, #006b23);
     color: #ffffff;
     line-height: 1.35;
+
+    overflow-x: hidden;
 }
 
 
 /* =========================================================
-   CONTAINER
+   MAIN CONTAINER
    ========================================================= */
 
 .container {
     width: 100%;
     max-width: 760px;
+
     margin: 0 auto;
     padding: 18px 20px;
 }
@@ -48,30 +48,30 @@ body {
 
 h1 {
     width: 100%;
-    max-width: 100%;
-    margin: 0 0 12px 0;
+    margin: 0 0 12px;
 
     text-align: center;
+
     font-size: clamp(1.2rem, 3.2vw, 1.9rem);
     font-weight: 800;
     line-height: 1.35;
 
     overflow-wrap: anywhere;
-    word-break: normal;
 }
 
 .section h2 {
     width: 100%;
-    max-width: 100%;
-
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
 
     text-align: center;
+
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 700;
+
     color: #84c341;
+
     line-height: 1.35;
 
     overflow-wrap: anywhere;
@@ -84,23 +84,27 @@ h1 {
 
 .section {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     padding: 10px 0;
+
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .section p {
+    width: 100%;
     max-width: 100%;
+
     font-size: 22px;
     font-weight: 700;
     line-height: 1.35;
+
     overflow-wrap: anywhere;
 }
 
 .small {
     margin-top: 8px;
+
     font-size: 19px;
     font-weight: 600;
 }
@@ -113,9 +117,8 @@ h1 {
 .icon-circle {
     width: 70px;
     height: 70px;
-    max-width: 70px;
 
-    margin: 0 auto 8px auto;
+    margin: 0 auto 8px;
 
     background: #84c341;
     border-radius: 50%;
@@ -133,6 +136,7 @@ h1 {
 
     stroke: #ffffff;
     fill: none;
+
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -145,21 +149,21 @@ h1 {
 
 .bullet-list {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     list-style: none;
-    margin: 10px 0 0 0;
+
+    margin: 10px 0 0;
     padding: 0;
 }
 
 .bullet-list li {
     width: 100%;
-    max-width: 100%;
+    min-width: 0;
 
     position: relative;
 
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
     padding: 0 0 0 24px;
 
     font-size: 22px;
@@ -167,7 +171,6 @@ h1 {
     line-height: 1.35;
 
     overflow-wrap: anywhere;
-    word-break: normal;
 }
 
 .bullet-list li::before {
@@ -209,10 +212,10 @@ a {
 
 .jobs {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     background: rgba(255,255,255,0.05);
+
     border-radius: 15px;
 
     padding: 15px;
@@ -220,15 +223,18 @@ a {
 
 .job-grid {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 8px 20px;
 
     list-style: none;
+
     margin: 0;
     padding: 0;
 }
@@ -270,7 +276,7 @@ a {
     max-width: 600px;
     height: auto;
 
-    margin: 12px auto 18px auto;
+    margin: 12px auto 18px;
 
     border-radius: 12px;
 
@@ -284,23 +290,23 @@ a {
 
 .contact {
     width: 100%;
-    max-width: 100%;
 
-    text-align: center;
     margin-top: 15px;
     padding: 0 10px;
+
+    text-align: center;
 
     font-size: 20px;
     font-weight: 700;
 }
 
 .contact a {
-    color: #ffffff;
-    text-decoration: none;
-
     display: inline-block;
 
     margin-top: 5px;
+
+    color: #ffffff;
+    text-decoration: none;
 
     overflow-wrap: anywhere;
     word-break: break-word;
@@ -313,7 +319,6 @@ a {
 
 .contact-form {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     margin-top: 4px;
@@ -321,7 +326,6 @@ a {
 
 .form-row {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     display: flex;
@@ -334,7 +338,6 @@ a {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     padding: 12px 14px;
@@ -347,8 +350,6 @@ a {
 
     color: #ffffff;
     background: rgba(255,255,255,0.08);
-
-    resize: vertical;
 }
 
 .contact-form input::placeholder,
@@ -361,18 +362,20 @@ a {
     outline: none;
 
     border-color: #84c341;
+
     background: rgba(255,255,255,0.14);
 }
 
 .contact-form textarea {
     margin-bottom: 14px;
+
+    resize: vertical;
 }
 
 .contact-form button {
     display: block;
 
     width: 100%;
-    max-width: 100%;
 
     border: none;
     border-radius: 8px;
@@ -404,28 +407,29 @@ a {
 
 .form-status {
     width: 100%;
-    max-width: 100%;
 
     margin: 10px 0 0;
 
-    font-size: 14px;
-    font-weight: 600;
+    display: none;
+
     text-align: center;
 
-    display: none;
+    font-size: 14px;
+    font-weight: 600;
 
     overflow-wrap: anywhere;
 }
 
 .form-status.error {
-    color: #ffb3c0;
     display: block;
+    color: #ffb3c0;
 }
 
 .form-status.success {
+    display: block;
+
     color: #c7f0b6;
     font-size: 14px;
-    display: block;
 }
 
 
@@ -444,7 +448,7 @@ a {
 
     overflow: hidden;
 
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
 
     white-space: nowrap;
 
@@ -463,7 +467,6 @@ a {
     z-index: 9999;
 
     width: 100%;
-    max-width: 100%;
 
     background: #004d1a;
 
@@ -473,17 +476,16 @@ a {
 .nav-container {
     width: 100%;
     max-width: 760px;
-    min-width: 0;
 
     margin: 0 auto;
+    padding: 12px 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     gap: 24px;
-
-    padding: 12px 20px;}
+}
 
 .nav-container a {
     color: #ffffff;
@@ -498,6 +500,11 @@ a {
 .nav-container a:hover {
     color: #84c341;
 }
+
+
+/* =========================================================
+   MOBILE NAVIGATION BUTTON
+   ========================================================= */
 
 #navToggle {
     display: none;
@@ -514,11 +521,15 @@ a {
     cursor: pointer;
 }
 
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
 #mobileMenu {
     display: none;
 
     width: 100%;
-    max-width: 100%;
 
     background: #004d1a;
 }
@@ -545,15 +556,16 @@ a {
 
 
 /* =========================================================
-   SPONSORS
+   SPONSOR NAVBAR
    ========================================================= */
 
 .navbar {
     width: 100%;
-    max-width: 100%;
 
     display: flex;
     justify-content: center;
+    align-items: center;
+
     flex-wrap: wrap;
 
     gap: 8px;
@@ -580,18 +592,23 @@ a {
     color: #004d1a;
 }
 
+
+/* =========================================================
+   SPONSORS
+   ========================================================= */
+
 .subtitle {
+    margin-bottom: 18px;
+
     text-align: center;
 
     font-size: 14px;
-    color: #c7f0b6;
 
-    margin-bottom: 18px;
+    color: #c7f0b6;
 }
 
 .sponsor-card {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
 
     display: flex;
@@ -600,13 +617,12 @@ a {
 
     gap: 10px;
 
+    padding: 10px 12px;
+    margin-bottom: 8px;
+
     background: rgba(255,255,255,0.06);
 
     border-radius: 9px;
-
-    padding: 10px 12px;
-
-    margin-bottom: 8px;
 }
 
 .sponsor-name {
@@ -624,10 +640,10 @@ a {
 
     white-space: nowrap;
 
+    padding: 8px 14px;
+
     background: #84c341;
     color: #004d1a;
-
-    padding: 8px 14px;
 
     border-radius: 7px;
 
@@ -638,19 +654,19 @@ a {
 }
 
 .sponsor-badge {
-    flex-shrink: 0;
-
     display: inline-block;
+
+    flex-shrink: 0;
 
     padding: 8px 16px;
 
     background: rgba(255,255,255,0.15);
     color: rgba(255,255,255,0.75);
 
+    border-radius: 7px;
+
     font-weight: 700;
     font-size: 12px;
-
-    border-radius: 7px;
 
     white-space: nowrap;
 
@@ -658,11 +674,11 @@ a {
 }
 
 .thanks {
+    margin-top: 18px;
+
     text-align: center;
 
     color: #c7f0b6;
-
-    margin-top: 18px;
 }
 
 
@@ -672,20 +688,19 @@ a {
 
 @media (max-width: 768px) {
 
-    .container {
-        width: 100%;
-        max-width: 100%;
+    /* Navbar is NOT sticky on tablet and phone */
 
+    #topnav {
+        position: static;
+    }
+
+    .container {
+        max-width: 100%;
         padding: 12px 15px;
     }
 
     h1 {
         font-size: 1.35rem;
-    }
-
-    .section {
-        width: 100%;
-        max-width: 100%;
     }
 
     .section p {
@@ -711,48 +726,27 @@ a {
     }
 
     .jobs {
-        width: 100%;
-        max-width: 100%;
-
         padding: 12px;
     }
 
     .job-grid {
-        width: 100%;
-        max-width: 100%;
-
         grid-template-columns: minmax(0, 1fr);
     }
 
     .job-grid li {
         width: 100%;
-        max-width: 100%;
-
-        font-size: 20px;
 
         margin-bottom: 8px;
+
+        font-size: 20px;
     }
 
-    .form-row {
-        width: 100%;
-        max-width: 100%;
 
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Mobile navigation */
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
 
     .nav-container {
-        width: 100%;
         max-width: 100%;
 
         justify-content: flex-end;
@@ -772,41 +766,51 @@ a {
         display: block;
     }
 
-    #mobileMenu a {
-        padding: 10px 15px;
+
+    /* =====================================================
+       FORM
+       ===================================================== */
+
+    .form-row {
+        flex-direction: column;
+
+        gap: 10px;
     }
 
-    /* Hero */
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero-image {
         width: 100%;
         max-width: 100%;
-        height: auto;
 
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* Sponsors */
+
+    /* =====================================================
+       SPONSORS
+       ===================================================== */
 
     .sponsor-card {
         flex-direction: column;
         align-items: stretch;
-
-        width: 100%;
-        max-width: 100%;
     }
 
     .sponsor-card a {
         width: 100%;
+
         text-align: center;
     }
 
     .sponsor-badge {
         width: 100%;
+
         text-align: center;
     }
-
 }
 
 
@@ -829,12 +833,13 @@ a {
         font-size: 14px;
     }
 
-    .bullet-list li {
+    .section p {
         font-size: 18px;
-        padding-left: 21px;
     }
 
-    .section p {
+    .bullet-list li {
+        padding-left: 21px;
+
         font-size: 18px;
     }
 
@@ -860,12 +865,11 @@ a {
         padding-left: 12px;
         padding-right: 12px;
     }
-
 }
 
 
 /* =========================================================
-   EXTRA PROTECTION AGAINST HORIZONTAL OVERFLOW
+   FINAL OVERFLOW PROTECTION
    ========================================================= */
 
 img,
