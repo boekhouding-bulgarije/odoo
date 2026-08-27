@@ -31,13 +31,13 @@ body {
 
 /* =========================================================
    MAIN CONTAINER
-   Desktop / laptop: 900px
+   Desktop / laptop: 1000px
    Tablet / phone: 100%
    ========================================================= */
 
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
 
     margin: 0 auto;
     padding: 18px 20px;
@@ -460,7 +460,7 @@ a {
 
 /* =========================================================
    NAVIGATION
-   Desktop / laptop: centered + sticky
+   Desktop / laptop: 1000px + sticky
    ========================================================= */
 
 #topnav {
@@ -478,7 +478,7 @@ a {
 
 .nav-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
 
     margin: 0 auto;
     padding: 12px 20px;
@@ -688,7 +688,6 @@ a {
 /* =========================================================
    TABLET
    max-width: 768px
-   Everything remains as before
    ========================================================= */
 
 @media (max-width: 768px) {
