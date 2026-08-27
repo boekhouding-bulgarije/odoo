@@ -31,6 +31,7 @@ body {
 
 /* =========================================================
    MAIN CONTAINER
+   Desktop / laptop: 1000px
    ========================================================= */
 
 .container {
@@ -38,7 +39,9 @@ body {
     max-width: 1000px;
 
     margin: 0 auto;
-    padding: 18px 20px;
+
+    /* Space for fixed desktop navbar */
+    padding: 70px 20px 18px;
 }
 
 
@@ -494,20 +497,14 @@ a {
 
 /* =========================================================
    MAIN NAVIGATION
+   DESKTOP / LAPTOP
    ========================================================= */
 
-/*
-   DESKTOP / LAPTOP
-   ----------------
-   Navbar is sticky.
-   Complete group is centered on the screen.
-*/
-
 #topnav {
-    position: sticky;
-    position: -webkit-sticky;
+    position: fixed;
 
     top: 0;
+    left: 0;
 
     z-index: 9999;
 
@@ -521,6 +518,8 @@ a {
 
 /* =========================================================
    DESKTOP NAVIGATION
+
+   Complete group is centered as one unit.
    ========================================================= */
 
 .nav-container {
@@ -752,14 +751,16 @@ a {
 
 /* =========================================================
    TABLET
+   max-width: 768px
+
+   Navbar is NOT fixed.
    ========================================================= */
 
 @media (max-width: 768px) {
 
-    /*
-       Tablet and phone:
-       navbar is NOT sticky.
-    */
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
 
     #topnav {
         position: static;
