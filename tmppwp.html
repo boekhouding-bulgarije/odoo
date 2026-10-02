@@ -181,8 +181,13 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-top:18px;
     gap:12px;
+  }
+  .nav-top{
+    margin-bottom:18px;
+  }
+  .nav-bottom{
+    margin-top:18px;
   }
   .nav button{
     background:#fff;
@@ -231,12 +236,22 @@
   </div>
 
   <div class="deck">
+    <!-- Navigatie bovenaan -->
+    <div class="nav nav-top">
+      <button class="prevBtn">← Vorige</button>
+      <div class="dots dots-top"></div>
+      <div class="counter"><span class="counterValue">1 / 11</span></div>
+      <button class="nextBtn">Volgende →</button>
+    </div>
+
     <div class="slide-wrap" id="slideWrap"></div>
-    <div class="nav">
-      <button id="prevBtn">← Vorige</button>
-      <div class="dots" id="dots"></div>
-      <div class="counter"><span id="counter">1 / 11</span></div>
-      <button id="nextBtn">Volgende →</button>
+
+    <!-- Navigatie onderaan -->
+    <div class="nav nav-bottom">
+      <button class="prevBtn">← Vorige</button>
+      <div class="dots dots-bottom"></div>
+      <div class="counter"><span class="counterValue">1 / 11</span></div>
+      <button class="nextBtn">Volgende →</button>
     </div>
   </div>
 </div>
@@ -476,19 +491,31 @@ function renderSlide(data){
 function renderDeck(){
   const slides=CONTENT[currentLang];
   document.getElementById("slideWrap").innerHTML=renderSlide(slides[currentSlide]);
-  const dotsEl=document.getElementById("dots");
-  dotsEl.innerHTML="";
-  slides.forEach((_,idx)=>{
-    const d=document.createElement("span");
-    if(idx===currentSlide)d.classList.add("active");
-    d.addEventListener("click",()=>{currentSlide=idx;renderDeck();});
-    dotsEl.appendChild(d);
+
+  // Update both navigation bars (top and bottom)
+  document.querySelectorAll(".dots").forEach(dotsEl=>{
+    dotsEl.innerHTML="";
+    slides.forEach((_,idx)=>{
+      const d=document.createElement("span");
+      if(idx===currentSlide)d.classList.add("active");
+      d.addEventListener("click",()=>{currentSlide=idx;renderDeck();});
+      dotsEl.appendChild(d);
+    });
   });
-  document.getElementById("counter").textContent=`${currentSlide+1} / ${slides.length}`;
-  document.getElementById("prevBtn").disabled=currentSlide===0;
-  document.getElementById("nextBtn").disabled=currentSlide===slides.length-1;
-  document.getElementById("prevBtn").textContent=NAV_LABELS[currentLang].prev;
-  document.getElementById("nextBtn").textContent=NAV_LABELS[currentLang].next;
+
+  document.querySelectorAll(".counterValue").forEach(el=>{
+    el.textContent=`${currentSlide+1} / ${slides.length}`;
+  });
+
+  document.querySelectorAll(".prevBtn").forEach(btn=>{
+    btn.disabled=currentSlide===0;
+    btn.textContent=NAV_LABELS[currentLang].prev;
+  });
+
+  document.querySelectorAll(".nextBtn").forEach(btn=>{
+    btn.disabled=currentSlide===slides.length-1;
+    btn.textContent=NAV_LABELS[currentLang].next;
+  });
 }
 
 function setLang(lang){
@@ -511,12 +538,16 @@ function setLang(lang){
 document.getElementById("btnNL").addEventListener("click",()=>setLang("nl"));
 document.getElementById("btnFR").addEventListener("click",()=>setLang("fr"));
 document.getElementById("btnEN").addEventListener("click",()=>setLang("en"));
-document.getElementById("prevBtn").addEventListener("click",()=>{
-  if(currentSlide>0){currentSlide--;renderDeck();}
+document.querySelectorAll(".prevBtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    if(currentSlide>0){currentSlide--;renderDeck();}
+  });
 });
-document.getElementById("nextBtn").addEventListener("click",()=>{
-  const slides=CONTENT[currentLang];
-  if(currentSlide<slides.length-1){currentSlide++;renderDeck();}
+document.querySelectorAll(".nextBtn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const slides=CONTENT[currentLang];
+    if(currentSlide<slides.length-1){currentSlide++;renderDeck();}
+  });
 });
 document.addEventListener("keydown",(e)=>{
   if(e.key==="ArrowRight")document.getElementById("nextBtn").click();
