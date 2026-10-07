@@ -69,6 +69,7 @@
   .lang-switch button.active{background:var(--navy);color:#fff;}
   .lang-switch button:hover:not(.active){background:#eef2f5;}
   .deck{position:relative;}
+  .slide-wrap{touch-action:pan-y;}
   .slide-wrap{
     background:#fff;
     border-radius:16px;
@@ -600,9 +601,33 @@ document.querySelectorAll(".nextBtn").forEach(btn=>{
   });
 });
 document.addEventListener("keydown",(e)=>{
-  if(e.key==="ArrowRight")document.getElementById("nextBtn").click();
-  if(e.key==="ArrowLeft")document.getElementById("prevBtn").click();
+  if(e.key==="ArrowRight")document.querySelector(".nextBtn").click();
+  if(e.key==="ArrowLeft")document.querySelector(".prevBtn").click();
 });
+
+/* Swipe-navigatie voor touchscreens */
+(function(){
+  const area=document.getElementById("slideWrap");
+  let sx=0,sy=0,tracking=false;
+  area.addEventListener("touchstart",(e)=>{
+    if(e.touches.length!==1){tracking=false;return;}
+    sx=e.touches[0].clientX;
+    sy=e.touches[0].clientY;
+    tracking=true;
+  },{passive:true});
+  area.addEventListener("touchend",(e)=>{
+    if(!tracking)return;
+    tracking=false;
+    const t=e.changedTouches[0];
+    const dx=t.clientX-sx;
+    const dy=t.clientY-sy;
+    // Alleen een duidelijke horizontale veeg telt (verticaal scrollen blijft werken)
+    if(Math.abs(dx)<50||Math.abs(dx)<Math.abs(dy)*1.5)return;
+    const slides=CONTENT[currentLang];
+    if(dx<0&&currentSlide<slides.length-1){currentSlide++;renderDeck();}
+    else if(dx>0&&currentSlide>0){currentSlide--;renderDeck();}
+  },{passive:true});
+})();
 renderDeck();
 </script>
 </body>
