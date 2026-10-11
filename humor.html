@@ -51,7 +51,7 @@
     .wrap {
       max-width: 920px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 16px;
     }
 
     /* ---------- COMMANDMENTS (mobiel eerst) ---------- */
@@ -60,7 +60,7 @@
       max-width: 760px;
       margin: 0 auto;
       /* ruimte voor de vaste navigatiebalk + wat lucht */
-      padding: calc(var(--nav-h) + 24px) 0 16px;
+      padding: calc(var(--nav-h) + 8px) 0 16px;
     }
 
     .commandments-header {
@@ -72,13 +72,13 @@
       font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(17px, 4.2vw, 21px);
-      line-height: 1.2;
+      line-height: 1.1;
       letter-spacing: -0.01em;
     }
 
     .commandments-header .subtitle {
-      margin-top: 2px;
-      line-height: 1.2;
+      margin-top: 0;
+      line-height: 1.1;
       color: var(--kraft);
       font-family: var(--font-mono);
       font-size: 13px;
@@ -95,21 +95,21 @@
 
     .commandment {
       display: grid;
-      grid-template-columns: 48px 1fr;
+      grid-template-columns: 44px 1fr;
       align-items: center;
       padding: 2px 0;
     }
 
     .commandment .roman {
       font-family: var(--font-mono);
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--stamp-amber);
     }
 
     .commandment .text {
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 600;
     }
 
@@ -120,7 +120,7 @@
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 600;
-      font-size: 17px;
+      font-size: 19px;
       color: var(--stamp-amber);
     }
 
@@ -129,7 +129,7 @@
       margin-top: 2px;
       line-height: 1.2;
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ink-dim);
       letter-spacing: 0.03em;
     }
@@ -137,6 +137,10 @@
     /* ---------- GROTERE SCHERMEN ---------- */
 
     @media (min-width: 601px) {
+      .wrap {
+        padding: 0 28px;
+      }
+
       .commandments-header h1 {
         font-size: clamp(20px, 2.4vw, 28px);
       }
@@ -170,27 +174,8 @@
 </head>
 
 <body>
-  <nav id="topnav">
-    <div class="nav-container">
-      <a href="index.html">Home</a>
-      <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
-      <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="coworking.html">Co-working</a>
-      <a href="humor.html">Humor</a>
-      <a href="boekhouder-facturatie-odoo.html">Contact</a>
-      <button id="navToggle">☰</button>
-    </div>
-    <div id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
-      <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
-      <a href="sponsors.html">Sponsors</a>
-      <a href="coworking.html">Co-working</a>
-      <a href="humor.html">Humor</a>
-      <a href="boekhouder-facturatie-odoo.html">Contact</a>
-    </div>
-  </nav>
+  <!-- Menu komt uit bebg.js (zonder defer, op deze plek) -->
+  <script src="bebg.js"></script>
 
   <div class="wrap">
 
@@ -275,15 +260,6 @@
     (function () {
       var nav = document.getElementById('topnav');
       if (!nav) return;
-
-      /* Hamburgermenu op telefoon/tablet openen en sluiten */
-      var toggle = document.getElementById('navToggle');
-      var menu = document.getElementById('mobileMenu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', function () {
-          menu.classList.toggle('open');
-        });
-      }
 
       /* Ruimte onder de navigatiebalk: alleen nodig als de balk vast staat (desktop) */
       function setNavHeight() {
