@@ -12,44 +12,25 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
-    /*
-      De algemene website-stijlen komen uit bebg.css.
-      De regels hieronder zijn bewust paginaspecifiek en mogen de algemene
-      vormgeving overschrijven waar deze humorpagina een eigen lay-out nodig heeft.
-    */
     :root {
-      /*
-      Vorige kleuren (warm crème thema) — bewaard ter referentie:
-      --ink: #2B2620;
-      --ink-dim: #6E6355;
-      --crate: #EEE6D6;
-      --crate-deep: #F6F0E3;
-      --stamp-amber: #E8A33D;
-      --rule: rgba(43,38,32,0.15);
-      */
-
       --ink: #FFFFFF;
       --ink-dim: #C7D9C7;
-      --crate: #0B5A0B;
       --crate-deep: darkgreen;
       --kraft: #C79A5F;
-      --kraft-deep: #8C6A3B;
       --stamp-amber: #FF8C00;
-      --rule: rgba(255,255,255,0.2);
 
       --font-display: 'Space Grotesk', sans-serif;
       --font-mono: 'IBM Plex Mono', monospace;
       --font-body: 'IBM Plex Sans', sans-serif;
+
+      /* Hoogte van de vaste navigatiebalk: pas aan als de titel nog te hoog of te laag staat */
+      --nav-h: 70px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -67,301 +48,32 @@
         );
     }
 
-    a {
-      color: inherit;
-    }
-
     .wrap {
       max-width: 920px;
       margin: 0 auto;
       padding: 0 28px;
     }
 
-    /* ---------- HEADER ---------- */
-
-    header {
-      padding: 28px 0 0;
-    }
-
-    .tag-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 14px;
-    }
-
-    .tag-row span.dot {
-      color: var(--stamp-amber);
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero {
-      padding: 32px 0 24px;
-      position: relative;
-    }
-
-    .stamp {
-      display: inline-block;
-      border: 2px solid var(--stamp-amber);
-      color: var(--stamp-amber);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 6px 12px;
-      transform: rotate(-3deg);
-      opacity: 0;
-      animation: stampIn 0.5s ease-out 0.15s forwards;
-    }
-
-    @keyframes stampIn {
-      0% {
-        opacity: 0;
-        transform: rotate(-3deg) scale(1.4);
-      }
-
-      100% {
-        opacity: 1;
-        transform: rotate(-3deg) scale(1);
-      }
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(34px, 6vw, 60px);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-top: 22px;
-      max-width: 16ch;
-    }
-
-    h1 .accent {
-      color: var(--kraft);
-    }
-
-    .lede {
-      font-size: 18px;
-      color: var(--ink-dim);
-      max-width: 56ch;
-      margin-top: 22px;
-    }
-
-    /* ---------- SECTION SHELL ---------- */
-
-    section {
-      padding: 22px 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--stamp-amber);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(24px, 3.4vw, 32px);
-      margin-bottom: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    p.body-text {
-      color: var(--ink-dim);
-      max-width: 62ch;
-      font-size: 16px;
-    }
-
-    p.body-text + p.body-text {
-      margin-top: 12px;
-    }
-
-    .editable {
-      color: var(--stamp-amber);
-      border-bottom: 1px dotted var(--stamp-amber);
-    }
-
-    /* ---------- MANIFEST / STEPS ---------- */
-
-    .manifest {
-      margin-top: 8px;
-      border: 1px solid var(--rule);
-    }
-
-    .manifest-row {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .manifest-row:last-child {
-      border-bottom: none;
-    }
-
-    .manifest-num {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--stamp-amber);
-      padding: 18px 0 18px 18px;
-      border-right: 1px dashed var(--rule);
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .manifest-content {
-      padding: 18px 20px;
-    }
-
-    .manifest-content h3 {
-      font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .manifest-content p {
-      font-size: 14.5px;
-      color: var(--ink-dim);
-    }
-
-    /* ---------- RESULTS GRID ---------- */
-
-    .results {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      margin-top: 8px;
-    }
-
-    @media (max-width: 700px) {
-      .results {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .result-cell {
-      background: var(--crate-deep);
-      padding: 22px;
-    }
-
-    .result-cell .k {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--stamp-amber);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
-    }
-
-    .result-cell .v {
-      font-size: 15px;
-      color: var(--ink);
-    }
-
-    /* ---------- CTA ---------- */
-
-    .cta {
-      text-align: center;
-      padding: 22px 0 40px;
-    }
-
-    .cta h2 {
-      margin-bottom: 14px;
-      font-size: 13px;
-      color: var(--stamp-amber);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .cta p.body-text {
-      margin: 0 auto 30px;
-    }
-
-    .stamp-btn {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1B1400;
-      background: var(--stamp-amber);
-      padding: 9px 20px;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 3px 3px 0 var(--kraft-deep);
-    }
-
-    .stamp-btn:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px 0 var(--kraft-deep);
-    }
-
-    .stamp-btn:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
-
-    a.stamp-btn:visited {
-      color: #1B1400;
-    }
-
-    /* ---------- COMMANDMENTS ---------- */
+    /* ---------- COMMANDMENTS (mobiel eerst) ---------- */
 
     .commandments {
-      padding: 0 0 16px;
       max-width: 760px;
       margin: 0 auto;
+      /* ruimte voor de vaste navigatiebalk + wat lucht */
+      padding: calc(var(--nav-h) + 24px) 0 16px;
     }
 
     .commandments-header {
       text-align: center;
       margin-bottom: 16px;
-      padding-top: 0;
     }
 
     .commandments-header h1 {
-      max-width: none;
-      font-size: clamp(18px, 2.6vw, 28px);
-      margin-top: 0;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-
-    @media (min-width: 601px) {
-      .commandments-header h1 {
-        margin-top: 24px;
-      }
-
-      .commandment {
-        padding: 44px 0;
-      }
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(20px, 5vw, 26px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
     }
 
     .commandments-header .subtitle {
@@ -373,24 +85,11 @@
       font-weight: 700;
     }
 
-    .commandments-header .thanks {
-      margin-top: 8px;
-      color: var(--ink-dim);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.02em;
-    }
-
-    .commandment-list {
-      border-top: none;
-    }
-
     .commandment {
       display: grid;
-      grid-template-columns: 58px 1fr;
-      border-bottom: none;
-      padding: 15px 0;
+      grid-template-columns: 48px 1fr;
       align-items: center;
+      padding: 6px 0;
     }
 
     .commandment .roman {
@@ -402,12 +101,8 @@
 
     .commandment .text {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
-    }
-
-    .commandment .text strong {
-      font-weight: 700;
     }
 
     .latin {
@@ -420,8 +115,6 @@
       color: var(--stamp-amber);
     }
 
-    /* ---------- COPYRIGHT ---------- */
-
     .copyright {
       text-align: center;
       margin-top: 10px;
@@ -431,9 +124,10 @@
       letter-spacing: 0.03em;
     }
 
+    /* ---------- GROTERE SCHERMEN ---------- */
+
     @media (min-width: 601px) {
       .commandments-header h1 {
-        margin-top: 24px;
         font-size: clamp(28px, 3.6vw, 42px);
       }
 
@@ -441,11 +135,8 @@
         font-size: 18px;
       }
 
-      .commandments-header .thanks {
-        font-size: 15px;
-      }
-
       .commandment {
+        grid-template-columns: 58px 1fr;
         padding: 10px 0;
       }
 
@@ -465,104 +156,31 @@
         font-size: 13px;
       }
     }
-
-    @media (max-width: 600px) {
-      .commandments {
-        padding-top: 28px;
-      }
-
-      .commandments-header h1 {
-        white-space: normal;
-        font-size: clamp(20px, 5vw, 26px);
-      }
-
-      .commandment {
-        grid-template-columns: 48px 1fr;
-        padding: 6px 0;
-      }
-
-      .commandment .text {
-        font-size: 16px;
-      }
-    }
-```css
-/* Titel direct onder de navigatiebalk */
-.commandments {
-  padding-top: 8px;
-}
-
-.commandments-header {
-  margin-bottom: 10px;
-}
-
-.commandments-header h1 {
-  font-size: clamp(16px, 2.2vw, 24px) !important;
-  line-height: 1.2;
-  margin-top: 0 !important;
-  white-space: normal;
-}
-
-/* Ook op kleine schermen */
-@media (max-width: 600px) {
-  .commandments {
-    padding-top: 8px;
-  }
-
-  .commandments-header h1 {
-    font-size: 20px !important;
-  }
-}
-/* FIX: titel zichtbaar en direct onder de navigatiebalk */
-main.commandments {
-  padding-top: 8px !important;
-}
-
-header.commandments-header {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-header.commandments-header h1 {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #ffffff !important;
-  font-size: 22px !important;
-  line-height: 1.3 !important;
-  margin: 0 0 8px 0 !important;
-  padding: 0 !important;
-  white-space: normal !important;
-  max-width: none !important;
-}
   </style>
 </head>
 
 <body>
-    <nav id="topnav">
-  <div class="nav-container">
-    <a href="index.html">Home</a>
-    <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
-    <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="coworking.html">Co-working</a>
-    <a href="humor.html">Humor</a>
-    <a href="boekhouder-facturatie-odoo.html">Contact</a>
-    <button id="navToggle">☰</button>
-  </div>
-  <div id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
-    <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="coworking.html">Co-working</a>
-    <a href="humor.html">Humor</a>
-    <a href="boekhouder-facturatie-odoo.html">Contact</a>
-  </div>
-</nav>
-
+  <nav id="topnav">
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
+      <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="coworking.html">Co-working</a>
+      <a href="humor.html">Humor</a>
+      <a href="boekhouder-facturatie-odoo.html">Contact</a>
+      <button id="navToggle">☰</button>
+    </div>
+    <div id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="odoo-boekhouder-interim-flexi.html">Odoo</a>
+      <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="coworking.html">Co-working</a>
+      <a href="humor.html">Humor</a>
+      <a href="boekhouder-facturatie-odoo.html">Contact</a>
+    </div>
+  </nav>
 
   <div class="wrap">
 
@@ -581,72 +199,52 @@ header.commandments-header h1 {
 
         <div class="commandment">
           <div class="roman">I.</div>
-          <div class="text">
-            <strong>Bovenal bemin de FOD</strong>
-          </div>
+          <div class="text"><strong>Bovenal bemin de FOD</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">II.</div>
-          <div class="text">
-            <strong>Boek niet ijdel, wij zijn als God</strong>
-          </div>
+          <div class="text"><strong>Boek niet ijdel, wij zijn als God</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">III.</div>
-          <div class="text">
-            <strong>Eer steeds de dag van declareren</strong>
-          </div>
+          <div class="text"><strong>Eer steeds de dag van declareren</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">IV.</div>
-          <div class="text">
-            <strong>BTW en RSZ zult ge niet negeren</strong>
-          </div>
+          <div class="text"><strong>BTW en RSZ zult ge niet negeren</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">V.</div>
-          <div class="text">
-            <strong>Benijd nooit andermans actief</strong>
-          </div>
+          <div class="text"><strong>Benijd nooit andermans actief</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">VI.</div>
-          <div class="text">
-            <strong>Wees steeds kuis in eigenshuis passief</strong>
-          </div>
+          <div class="text"><strong>Wees steeds kuis in eigenshuis passief</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">VII.</div>
-          <div class="text">
-            <strong>Zwoeg en zweet en blijven knokken</strong>
-          </div>
+          <div class="text"><strong>Zwoeg en zweet en blijven knokken</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">VIII.</div>
-          <div class="text">
-            <strong>Voor de schatkist zult ge dokken</strong>
-          </div>
+          <div class="text"><strong>Voor de schatkist zult ge dokken</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">IX.</div>
-          <div class="text">
-            <strong>Sjoemel niet want ‘t is geweten</strong>
-          </div>
+          <div class="text"><strong>Sjoemel niet want ‘t is geweten</strong></div>
         </div>
 
         <div class="commandment">
           <div class="roman">X.</div>
-          <div class="text">
-            <strong>De FOD zal je nooit vergeten</strong>
-          </div>
+          <div class="text"><strong>De FOD zal je nooit vergeten</strong></div>
         </div>
 
       </div>
@@ -662,6 +260,23 @@ header.commandments-header h1 {
     </main>
 
   </div>
+
+  <script>
+    /* Meet de echte hoogte van de vaste navigatiebalk en schuif de inhoud daaronder */
+    (function () {
+      var nav = document.getElementById('topnav');
+      if (!nav) return;
+      function setNavHeight() {
+        var pos = getComputedStyle(nav).position;
+        if (pos === 'fixed' || pos === 'sticky') {
+          document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+        }
+      }
+      setNavHeight();
+      window.addEventListener('load', setNavHeight);
+      window.addEventListener('resize', setNavHeight);
+    })();
+  </script>
 
 </body>
 </html>
