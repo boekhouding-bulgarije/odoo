@@ -485,7 +485,33 @@
         font-size: 16px;
       }
     }
+```css
+/* Titel direct onder de navigatiebalk */
+.commandments {
+  padding-top: 8px;
+}
 
+.commandments-header {
+  margin-bottom: 10px;
+}
+
+.commandments-header h1 {
+  font-size: clamp(16px, 2.2vw, 24px) !important;
+  line-height: 1.2;
+  margin-top: 0 !important;
+  white-space: normal;
+}
+
+/* Ook op kleine schermen */
+@media (max-width: 600px) {
+  .commandments {
+    padding-top: 8px;
+  }
+
+  .commandments-header h1 {
+    font-size: 20px !important;
+  }
+}
   </style>
 </head>
 
@@ -507,6 +533,7 @@
     <a href="facturatie-boekhouding-bpo.html">Flexi-job</a>
     <a href="sponsors.html">Sponsors</a>
     <a href="coworking.html">Co-working</a>
+    <a href="humor.html">Humor</a>
     <a href="boekhouder-facturatie-odoo.html">Contact</a>
   </div>
 </nav>
