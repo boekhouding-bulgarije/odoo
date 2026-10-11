@@ -77,12 +77,20 @@
     }
 
     .commandments-header .subtitle {
-      margin-top: 12px;
+      margin-top: 2px;
+      line-height: 1.2;
       color: var(--kraft);
       font-family: var(--font-mono);
       font-size: 13px;
       letter-spacing: 0.04em;
       font-weight: 700;
+    }
+
+    /* Lijst als blok in het midden; de regels zelf blijven netjes onder elkaar uitgelijnd */
+    .commandment-list {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
     .commandment {
@@ -108,6 +116,7 @@
     .latin {
       text-align: center;
       margin-top: 8px;
+      line-height: 1.2;
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 600;
@@ -117,7 +126,8 @@
 
     .copyright {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 2px;
+      line-height: 1.2;
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--ink-dim);
