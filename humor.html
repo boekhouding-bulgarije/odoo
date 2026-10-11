@@ -107,7 +107,7 @@
 
     .latin {
       text-align: center;
-      margin-top: 34px;
+      margin-top: 8px;
       font-family: var(--font-display);
       font-style: italic;
       font-weight: 600;
@@ -262,15 +262,25 @@
   </div>
 
   <script>
-    /* Meet de echte hoogte van de vaste navigatiebalk en schuif de inhoud daaronder */
     (function () {
       var nav = document.getElementById('topnav');
       if (!nav) return;
+
+      /* Hamburgermenu op telefoon/tablet openen en sluiten */
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileMenu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          menu.classList.toggle('open');
+        });
+      }
+
+      /* Ruimte onder de navigatiebalk: alleen nodig als de balk vast staat (desktop) */
       function setNavHeight() {
+        var bar = nav.querySelector('.nav-container') || nav;
         var pos = getComputedStyle(nav).position;
-        if (pos === 'fixed' || pos === 'sticky') {
-          document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
-        }
+        var h = (pos === 'fixed' || pos === 'sticky') ? bar.offsetHeight : 0;
+        document.documentElement.style.setProperty('--nav-h', h + 'px');
       }
       setNavHeight();
       window.addEventListener('load', setNavHeight);
