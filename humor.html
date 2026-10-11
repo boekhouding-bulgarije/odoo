@@ -281,6 +281,24 @@
       var nav = document.getElementById('topnav');
       if (!nav) return;
 
+      /* Hamburgermenu op telefoon/tablet openen en sluiten:
+         bebg.css toont #mobileMenu pas als het de klasse "open" heeft */
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileMenu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          menu.classList.toggle('open');
+        });
+        /* Tik buiten het menu of druk op Escape om te sluiten */
+        document.addEventListener('click', function (e) {
+          if (!menu.contains(e.target)) menu.classList.remove('open');
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') menu.classList.remove('open');
+        });
+      }
+
       /* Ruimte onder de navigatiebalk: alleen nodig als de balk vast staat (desktop) */
       function setNavHeight() {
         var bar = nav.querySelector('.nav-container') || nav;
