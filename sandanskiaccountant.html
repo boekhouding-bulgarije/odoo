@@ -24,10 +24,21 @@
     @media(max-width:700px){.odoo-benefits{grid-template-columns:1fr}.wrap{width:min(100% - 36px,560px)}.section{padding:72px 0}header{height:68px}.mobile-toggle{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:68px;background:var(--cream);padding:18px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}.nav-links .button{margin-top:12px}.hero{padding:66px 0 55px}.hero-grid{grid-template-columns:1fr;gap:27px}.hero h1{font-size:clamp(3rem,14vw,4.4rem)}.hero-copy{font-size:1rem}.hero-visual{min-height:340px}.visual-panel{max-width:340px;height:320px}.card-top{left:0;top:36px}.card-bottom{right:0;bottom:25px}.trust-inner{grid-template-columns:1fr;gap:13px;padding:18px 0}.trust-item{justify-content:flex-start}.about-grid,.odoo-grid,.international-grid,.contact-grid{grid-template-columns:1fr;gap:33px}.about-art{min-height:300px;border-top-right-radius:90px}.about-grid .about-art{order:2}.about-points{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.service-card{padding:23px}.international-cards{grid-template-columns:1fr 1fr}.odoo-art{min-height:280px;order:-1}.why-grid{grid-template-columns:1fr 1fr}.contact{padding:70px 0}.form-row{grid-template-columns:1fr;gap:0}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap;gap:14px}.copyright{margin-top:4px}}
     @media(max-width:430px){.why-grid{grid-template-columns:1fr}.international-cards{grid-template-columns:1fr}.region-card.wide{grid-column:auto}.hero-actions .button{width:100%}.contact-form{padding:20px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-/* Keep the slogan on one line in every language */
-.hero-note span:last-child {
+
+/* Keep the slogan and checkmark on one line in every language */
+.hero-note {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
 }
+
+.hero-note span:last-child {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 </style>
 </head>
 <body>
