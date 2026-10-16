@@ -81,19 +81,17 @@
     .hero .hero-actions{margin-top:28px}
     /* Laptop / desktop: intro block beside the family-practice story */
     @media(min-width:901px){
-      .hero .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:62px;max-width:1180px}
+      .hero{padding-top:144px}
+      .hero .hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:62px;max-width:1180px}
       /* Story column on the left, "Clear accounts. Confident business." on the right */
       .hero .hero-story{order:-1}
       .hero .hero-intro{order:1}
       .hero .hero-copy{max-width:560px}
       .hero .hero-intro{display:flex;flex-direction:column}
-      .hero 
-      .hero .hero-story{margin-top:0;padding-top:0;border-top:0;align-self:center}
+      .hero .hero-story{margin-top:0;padding-top:0;border-top:0;align-self:start}
+      .hero .hero-story > h2:first-child{margin-top:0}
       .hero .hero-story h2{max-width:760px;font-size:clamp(2rem,2.7vw,2.7rem)}
     }
-    .hero 
-    .hero 
-    @media(max-width:900px){.hero }
 
     /* Slightly increase breathing room now that the trust strip is removed. */
     .hero{padding-bottom:108px}
@@ -121,7 +119,6 @@
 <!-- New suggested version by Marc. Making Menu names more consistent.-->
 <a data-i18n-bg="Начало" data-i18n-el="Αρχική" data-i18n-en="Home" data-i18n-fr="Accueil" data-i18n-nl="Start" href="#about">About</a><a data-i18n-bg="За нас" data-i18n-el="Σχετικά" data-i18n-en="Our team" data-i18n-fr="Notre équipe" data-i18n-nl="Ons team" href="#team">Our leadership</a><a data-i18n-bg="Услуги" data-i18n-el="Υπηρεσίες" data-i18n-en="Services" data-i18n-fr="Services" data-i18n-nl="Diensten" href="#services">Services</a><a data-i18n-bg="Дигитално счетоводство" data-i18n-el="Ψηφιακή λογιστική" data-i18n-en="Digital accounting" data-i18n-fr="Comptabilité numérique" data-i18n-nl="Digitale boekhouding" href="#odoo">Digital accounting</a><a data-i18n-bg="Международни клиенти" data-i18n-el="Διεθνείς πελάτες" data-i18n-en="International" data-i18n-fr="International" data-i18n-nl="Internationaal" href="#international">International</a><a data-i18n-bg="Калкулатор" data-i18n-el="Εκτίμηση" data-i18n-en="Estimate" data-i18n-fr="Estimation" data-i18n-nl="Prijsindicatie" href="#pricing">Estimate</a><a class="button button-primary" data-i18n-bg="Свържете се ↗" data-i18n-el="Επικοινωνία ↗" data-i18n-en="Let’s talk ↗" data-i18n-fr="Parlons-en ↗" data-i18n-nl="Neem contact op ↗" href="#contact">Let’s talk ↗</a><select aria-label="Select website language / Избор на език" class="language-select" id="site-language" title="Choose website language"><option value="en">EN</option><option value="nl">NL</option><option value="fr">FR</option><option value="el">ΕΛ</option><option value="bg">BG</option></select></nav>
 
-</div>
 </header>
 <main>
 <section class="hero" id="home">
