@@ -312,7 +312,26 @@ translate('en');
 })();</script>
 
 <script>
-   
+  /*
+Script written by Marc on 17/10/2026
+
+Purpose:
+Makes it possible to use a shortened URL to link directly
+to a section in the desired language.
+
+Note:
+Due to the way the language selector works, the simple
+notation nl#section is not sufficient. This is particularly
+inconvenient on mobile devices.
+
+Marketing and external visibility:
+By participating in discussions on forums and social networks
+such as LinkedIn, we can provide relevant answers and link
+directly to the appropriate section of the landing page.
+
+This increases the website's external visibility and gives
+the main services page greater exposure through relevant links.
+*/ 
 (function () {
   var params = new URLSearchParams(location.search);
   var wanted = (params.get('lang') || '').toLowerCase();
