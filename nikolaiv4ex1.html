@@ -311,12 +311,38 @@ $('lead-copy').addEventListener('click',async()=>{const x=prepare();if(!x)return
 translate('en');
 })();</script>
 <script>
-  const lang = new URLSearchParams(location.search).get('lang');
-  if (lang) {
-    const btn = [...document.querySelectorAll('button, a')]
-      .find(el => el.textContent.trim().toLowerCase() === lang.toLowerCase());
-    if (btn) btn.click();
+(function () {
+  var params = new URLSearchParams(location.search);
+  var wanted = (params.get('lang') || '').toLowerCase();
+  var select = document.getElementById('site-language');
+  if (!select) return;
+
+  var supported = Array.prototype.map.call(select.options, function (o) { return o.value; });
+
+  // 1. Apply the language from ?lang=xx (en, nl, fr, el, bg)
+  if (wanted && supported.indexOf(wanted) !== -1) {
+    select.value = wanted;
+    select.dispatchEvent(new Event('change', { bubbles: true }));
   }
+
+  // 2. Re-scroll to the #section after translation has changed the layout
+  function scrollToHash() {
+    if (!location.hash) return;
+    var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView();
+  }
+  scrollToHash();
+  window.addEventListener('load', scrollToHash);
+  setTimeout(scrollToHash, 300);
+
+  // 3. Keep ?lang= in the address bar in sync when visitors change language manually,
+  //    so they can copy and share the current link
+  select.addEventListener('change', function () {
+    var url = new URL(location.href);
+    url.searchParams.set('lang', select.value);
+    history.replaceState(null, '', url);
+  });
+})();
 </script>
 </body>
 </html>
