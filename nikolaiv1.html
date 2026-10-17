@@ -309,5 +309,61 @@ $('lead-mail').addEventListener('click',()=>{const x=prepare();if(!x)return;loca
 $('lead-gmail').addEventListener('click',()=>{const x=prepare();if(!x)return;window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(EMAIL)+'&su='+encodeURIComponent(x.subject)+'&body='+encodeURIComponent(x.body),'_blank','noopener,noreferrer')});
 $('lead-copy').addEventListener('click',async()=>{const x=prepare();if(!x)return;const data='To: '+EMAIL+'\nSubject: '+x.subject+'\n\n'+x.body;try{if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(data);else{const el=D.createElement('textarea');el.value=data;el.style.position='fixed';D.body.appendChild(el);el.select();if(!D.execCommand('copy'))throw Error('copy');el.remove()}$('contact-feedback').textContent=words[lang].copied}catch(e){$('contact-feedback').textContent=words[lang].copyFail+' '+data}});
 translate('en');
-})();</script></body>
+})();</script>
+
+<script>
+  /*
+Script written by Marc on 17/10/2026
+
+Purpose:
+Makes it possible to use a shortened URL to link directly
+to a section in the desired language.
+
+Due to the way the language selector works, the simple
+notation nl#section is not sufficient. This is particularly
+inconvenient on mobile devices.
+
+Marketing and external visibility:
+By participating in discussions on forums and social networks
+such as LinkedIn, we can provide relevant answers and link
+directly to the appropriate section of the landing page.
+
+This increases the website's external visibility and gives
+the main services page greater exposure through relevant links.
+*/ 
+(function () {
+  var params = new URLSearchParams(location.search);
+  var wanted = (params.get('lang') || '').toLowerCase();
+  var select = document.getElementById('site-language');
+  if (!select) return;
+
+  var supported = Array.prototype.map.call(select.options, function (o) { return o.value; });
+
+  // 1. Apply the language from ?lang=xx (en, nl, fr, el, bg)
+  if (wanted && supported.indexOf(wanted) !== -1) {
+    select.value = wanted;
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
+  // 2. Re-scroll to the #section after translation has changed the layout
+  function scrollToHash() {
+    if (!location.hash) return;
+    var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) target.scrollIntoView();
+  }
+  scrollToHash();
+  window.addEventListener('load', scrollToHash);
+  setTimeout(scrollToHash, 300);
+
+  // 3. Keep ?lang= in the address bar in sync when visitors change language manually,
+  //    so they can copy and share the current link
+  select.addEventListener('change', function () {
+    var url = new URL(location.href);
+    url.searchParams.set('lang', select.value);
+    history.replaceState(null, '', url);
+  });
+})();
+</script>
+
+</body>
 </html>
