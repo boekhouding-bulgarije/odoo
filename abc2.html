@@ -64,9 +64,44 @@
     .then(function (html) {
       var logo = "https://bkatrpghmzbpjhegvkev.supabase.co/storage/v1/object/public/s/1792727393058-screenshot-1792727393056.png";
 
-      /* Nederlandse homepage-teksten vervangen in de geladen bron. */
-      html = html.split("Wil je je bedrijf oprichten in Bulgarije en profiteren van alle voordelen die het land biedt?").join("Ondernemen in een belastingvriendelijk EU-land, met alle fiscale zaken netjes geregeld? Het kan!");
-      html = html.split("Het kantoor in Sofia, gespecialiseerd in boekhouding en fiscaal advies voor internationale bedrijven in Bulgarije.").join("Ons kantoor in Sofia begeleidt Belgische bedrijven juridisch, fiscaal en boekhoudkundig bij het oprichten van een filiaal of remote office.");
+      /* Homepage-teksten vervangen in de geladen bron (NL / EN / FR). */
+      function swap(from, to) { if (from && to) html = html.split(from).join(to); }
+
+      /* Merkzin achter de groeicijfers – Nederlands, Engels en Frans. */
+      swap("Achter jouw cijfers staat Herman VDM: meer dan 30 jaar ervaring, met persoonlijke aandacht voor jouw onderneming.",
+           "VDM International staat voor meer dan 30 jaar ervaring, met persoonlijke aandacht voor jouw onderneming.");
+      swap("Meet Herman VDM: over 30 years of experience, with a personal commitment to your business.",
+           "VDM International stands for over 30 years of experience, with a personalized approach and genuine care for your business.");
+      swap("Derrière vos chiffres, Herman VDM : plus de 30 ans d\u2019expérience et une attention sincère portée à votre entreprise.",
+           "VDM International, c\u2019est plus de 30 ans d\u2019expérience, avec une approche personnalisée et une attention particulière portée à votre entreprise.");
+
+      /* 1. kicker (NL) */
+      swap("Wil je je bedrijf oprichten in Bulgarije en profiteren van alle voordelen die het land biedt?",
+           "Ondernemen in een belastingvriendelijk EU-land, met alle fiscale zaken netjes geregeld? Het kan!");
+
+      /* 2. de drie punten op de home – Nederlands */
+      swap("Vertrouw op Herman VDM voor de groei van je bedrijf.",
+           "Vertrouw op VDM International voor de groei van je bedrijf.");
+      swap("Het kantoor in Sofia, gespecialiseerd in boekhouding en fiscaal advies voor internationale bedrijven in Bulgarije.",
+           "Ons kantoor in Sofia begeleidt Belgische bedrijven juridisch, fiscaal en boekhoudkundig bij het oprichten van een filiaal of remote office.");
+      swap("Wij helpen internationale bedrijven opstarten en groeien in Bulgarije. Vraag een gratis gesprek van 30 minuten aan met onze bedrijfsadviseur.",
+           "We begeleiden je met een concreet stappenplan, met als doel een hoger nettoresultaat voor de zaakvoerder en de mede-eigenaars.");
+
+      /* 3. dezelfde drie punten – Engels */
+      swap("Trust Herman VDM for the growth of your business.",
+           "Trust VDM International for the growth of your business.");
+      swap("The agency in Sofia specialised in accounting and tax consulting for international companies in Bulgaria.",
+           "Our office in Sofia guides Belgian companies through the legal, tax and accounting side of setting up a branch or remote office.");
+      swap("We help international companies establish and grow in Bulgaria. Request a free 30 minute meeting with our company advisor.",
+           "We guide you with a concrete step-by-step plan, aimed at a higher net result for the managing director and the co-owners.");
+
+      /* 4. dezelfde drie punten – Frans */
+      swap("Faites confiance \u00e0 Herman VDM pour la croissance de votre entreprise.",
+           "Faites confiance \u00e0 VDM International pour la croissance de votre entreprise.");
+      swap("L'agence de Sofia sp\u00e9cialis\u00e9e en comptabilit\u00e9 et conseil fiscal pour les entreprises internationales en Bulgarie.",
+           "Notre bureau de Sofia accompagne les entreprises belges sur les plans juridique, fiscal et comptable lors de la cr\u00e9ation d'une succursale ou d'un bureau d\u00e9localis\u00e9.");
+      swap("Nous aidons les entreprises internationales \u00e0 s'installer et \u00e0 se d\u00e9velopper en Bulgarie. Demandez un entretien gratuit de 30 minutes avec notre conseiller.",
+           "Nous vous accompagnons avec un plan d'action concret, avec pour objectif un r\u00e9sultat net plus \u00e9lev\u00e9 pour le g\u00e9rant et les copropri\u00e9taires.");
 
       /* logo in de header en in de footer, met dezelfde subtiele afgeronde hoeken */
       html = html.replace(/(<a class="brand"[^>]*>\s*<img src=")[^"]+(" alt="Herman VDM">)/, "$1" + logo + "$2");
