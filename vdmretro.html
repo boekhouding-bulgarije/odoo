@@ -149,8 +149,19 @@ td {
 Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
 </marquee>
 
-<p class="blink">
-*** NIEUW !!! Online administratieondersteuning ***
+<p>
+<button style="
+    background-color: #CC0000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+">
+    🎧Klik en luister naar mijn persoonlijke mededeling
+</button>
 </p>
 
 </div>
@@ -512,7 +523,7 @@ function playDrum(n, when) {
       if (loop) begin(); else stop(true);
     }
   }
-  const loop = true; // muziek herhaalt zichzelf
+  const loop = false; // muziek speelt één keer en stopt daarna
   function begin() { ni = 0; startAt = ctx.currentTime + 0.15; }
   async function play() {
     if (playing || starting) return;
