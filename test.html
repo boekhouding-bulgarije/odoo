@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Welkom bij Boekhoudkantoor VDM International</title>
 
 <style>
@@ -13,7 +14,9 @@ body {
 }
 
 .page {
-    width: 760px;
+    width: auto;
+    max-width: 760px;
+    box-sizing: border-box;
     margin: auto;
     background: white;
     border: 8px ridge silver;
@@ -112,6 +115,41 @@ td {
 }
 
 
+/* Rode knop: duidelijk zichtbaar, op telefoon over de volle breedte */
+.mededeling-knop {
+    background-color: #CC0000;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(255,255,255,.7), 0 3px 8px rgba(0,0,0,.5);
+    animation: puls 1.8s ease-out infinite;
+}
+.mededeling-knop:disabled { animation: none; }
+@keyframes puls {
+    0%   { box-shadow: 0 0 0 0 rgba(255,255,255,.7), 0 3px 8px rgba(0,0,0,.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(255,255,255,0), 0 3px 8px rgba(0,0,0,.5); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0), 0 3px 8px rgba(0,0,0,.5); }
+}
+@media (prefers-reduced-motion: reduce) { .mededeling-knop { animation: none; } }
+
+/* Telefoon: bijna volle breedte, smalle blauwe rand */
+@media (max-width: 800px) {
+    body { margin: 0; }
+    .page { border-width: 3px; padding: 2px; }
+    .box { margin: 6px 0; padding: 8px; border-width: 3px; }
+    .header { padding: 12px 8px; }
+    .header h1 { font-size: 22px; }
+    .mededeling-knop { display: block; width: 100%; box-sizing: border-box; font-size: 21px; line-height: 1.3; padding: 18px 12px; }
+    .menu { padding: 6px; }
+    .menu a { padding: 6px 10px; margin: 3px; }
+    td { padding: 6px; }
+    img { max-width: 100%; height: auto; }
+}
+
 /* MIDI-player (discreet, rechtsonder) */
 #muziek {
     position: fixed; right: 10px; bottom: 10px; z-index: 50;
@@ -150,17 +188,8 @@ Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
 </marquee>
 
 <p>
-<button type="button" id="persoonlijk" style="
-    background-color: #CC0000;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    padding: 14px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-">
-    🎧 Luister naar mijn persoonlijke mededeling
+<button type="button" id="persoonlijk" class="mededeling-knop">
+    🎧 Klik en luister naar Herman's persoonlijke mededeling
 </button>
 </p>
 
@@ -186,15 +215,14 @@ Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
 
 <p>
 
-Welkom op onze officiële website.
-Wij helpen zelfstandigen, KMO's en verenigingen
+Wij helpen zelfstandigen, KMO's en VZW's 
 met een correcte en betaalbare boekhouding.
 
 </p>
 
 <div class="warning">
 ★★★ ACTIE VAN DE MAAND ★★★<br>
-Gratis eerste adviesgesprek!
+Bij elke boeking een gratis Primus 33cl!
 </div>
 
 </div>
@@ -297,10 +325,10 @@ Gratis eerste adviesgesprek!
 
 Boekhoudkantoor VDM International<br>
 Kerkstraat 25<br>
-2800 Mechelen<br><br>
+3150 Haacht<br><br>
 
 ☎ 012/34.56.78<br>
-✉ info@debrug.be
+✉ info@vdminternational.com
 
 </p>
 
