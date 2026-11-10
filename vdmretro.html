@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Welkom bij Boekhoudkantoor VDM International</title>
+
+<style>
+
+body {
+    background: #000066;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.page {
+    width: 760px;
+    margin: auto;
+    background: white;
+    border: 8px ridge silver;
+    padding: 5px;
+}
+
+.header {
+    background: linear-gradient(#0000cc,#000066);
+    color: yellow;
+    text-align:center;
+    padding:20px;
+    border:4px outset silver;
+}
+
+.header h1 {
+    font-size:36px;
+    text-shadow:3px 3px red;
+}
+
+.blink {
+    color:red;
+    font-weight:bold;
+}
+
+.menu {
+    background:#cccccc;
+    border:3px outset white;
+    padding:10px;
+    text-align:center;
+}
+
+.menu a {
+    display:inline-block;
+    background:#000080;
+    color:white;
+    padding:6px 15px;
+    margin:4px;
+    border:3px outset silver;
+    text-decoration:none;
+}
+
+.menu a:active {
+    border:3px inset silver;
+}
+
+
+.box {
+    margin:15px;
+    padding:10px;
+    border:5px ridge #999;
+    background:#ffffcc;
+}
+
+
+h2 {
+    color:#000099;
+    text-decoration:underline;
+}
+
+
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+td {
+    border:2px solid blue;
+    padding:8px;
+}
+
+
+.warning {
+    background:red;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+
+.counter {
+    background:black;
+    color:lime;
+    font-family:"Courier New";
+    padding:5px;
+    display:inline-block;
+}
+
+
+.footer {
+    background:#cccccc;
+    text-align:center;
+    padding:15px;
+    border-top:5px ridge silver;
+    font-size:12px;
+}
+
+
+/* MIDI-player (discreet, rechtsonder) */
+#muziek {
+    position: fixed; right: 10px; bottom: 10px; z-index: 50;
+    display: flex; align-items: center; gap: 4px;
+    background: rgba(204,204,204,.9); border: 2px outset white;
+    padding: 3px 6px; font-size: 12px; opacity: .55; transition: opacity .2s;
+}
+#muziek:hover, #muziek:focus-within { opacity: 1; }
+#muziek .note { color: #000080; }
+#midiPlay, #midiStop {
+    background: #000080; color: white; border: 2px outset silver;
+    padding: 1px 7px; font-size: 11px; cursor: pointer; line-height: 1.4;
+}
+#midiVolume { width: 60px; height: 12px; vertical-align: middle; }
+#midiStatus { font-size: 11px; }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="header">
+
+<h1>
+★ BOEKHOUDKANTOOR VDM INTERNATIONAL ★
+</h1>
+
+<marquee>
+Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
+</marquee>
+
+<p class="blink">
+*** NIEUW !!! Online administratieondersteuning ***
+</p>
+
+</div>
+
+
+
+<div class="menu">
+
+<a href="#diensten">📚 Diensten</a>
+
+<a href="#software">💻 Software</a>
+
+<a href="#prijzen">💰 Prijzen</a>
+
+<a href="#contact">✉ Contact</a>
+
+</div>
+
+<div class="box">
+
+<h2>Welkom bezoeker!</h2>
+
+<p>
+
+Welkom op onze officiële website.
+Wij helpen zelfstandigen, KMO's en verenigingen
+met een correcte en betaalbare boekhouding.
+
+</p>
+
+<div class="warning">
+★★★ ACTIE VAN DE MAAND ★★★<br>
+Gratis eerste adviesgesprek!
+</div>
+
+</div>
+
+
+
+
+<div class="box" id="diensten">
+
+<h2>Onze diensten</h2>
+
+
+<table>
+
+<tr>
+<td>✔ Dubbele boekhouding</td>
+<td>✔ BTW-aangiften</td>
+</tr>
+
+<tr>
+<td>✔ Jaarrekeningen</td>
+<td>✔ Administratieve hulp</td>
+</tr>
+
+<tr>
+<td>✔ Facturatie</td>
+<td>✔ Odoo ondersteuning</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+<div class="box" id="software">
+
+<h2>Onze softwarekennis</h2>
+
+
+<ul>
+
+<li>Microsoft Office</li>
+<li>Exact Online</li>
+<li>Odoo</li>
+<li>Business Central</li>
+<li>Yuki</li>
+
+</ul>
+
+
+<p>
+<img src="https://dummyimage.com/88x31/000/fff&text=HTML+4.0">
+<img src="https://dummyimage.com/88x31/000/fff&text=Netscape">
+<img src="https://dummyimage.com/88x31/000/fff&text=Best+View">
+</p>
+
+
+</div>
+
+
+
+
+<div class="box" id="prijzen">
+
+<h2>Onze prijzen</h2>
+
+
+<table>
+
+<tr>
+<td>Starter</td>
+<td>€ 75 / maand</td>
+</tr>
+
+<tr>
+<td>KMO</td>
+<td>Op aanvraag</td>
+</tr>
+
+<tr>
+<td>Consultancy</td>
+<td>€ 50 / uur</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+<div class="box" id="contact">
+
+
+<h2>Contacteer ons</h2>
+
+<p>
+
+Boekhoudkantoor VDM International<br>
+Kerkstraat 25<br>
+2800 Mechelen<br><br>
+
+☎ 012/34.56.78<br>
+✉ info@debrug.be
+
+</p>
+
+
+</div>
+
+
+
+
+<center>
+
+<p>
+
+Aantal bezoekers:
+
+<span class="counter">
+00012345
+</span>
+
+</p>
+
+
+<p class="blink">
+Deze website is geoptimaliseerd voor Netscape Navigator 4.0
+</p>
+
+
+</center>
+
+
+
+<div class="footer">
+
+<img src="https://dummyimage.com/120x40/ff0000/ffffff&text=UNDER+CONSTRUCTION">
+
+<br><br>
+
+© 2026 Boekhoudkantoor VDM International<br>
+
+Laatste update: 17 juli 2026
+
+</div>
+
+
+
+</div>
+
+
+<div id="muziek" title="Achtergrondmuziek">
+    <span class="note">&#9835;</span>
+    <button type="button" id="midiPlay" title="Afspelen">&#9654;</button>
+    <button type="button" id="midiStop" title="Stoppen">&#9632;</button>
+    <input type="range" id="midiVolume" min="0" max="100" value="35" title="Volume" aria-label="Volume">
+    <span id="midiStatus" aria-live="polite"></span>
+</div>
+
+<script>
+(() => {
+  const MIDI_B64 = "TVRoZAAAAAYAAAABAeBNVHJrAABGDgD/IQEAAP8BD0NhdGFsb2c6IE1EMDY0NAD/ARFBcnRpc3Q6IFdpbGwgVHVyYQD/ARtTb25ndGl0bGU6IERyYWFpIERhbiA3OTcyMDQA/wEjQXV0aG9yOiBBbGVkYS9OZWxseSBCeWwvSnVzdGluIFR1YmIA/wIYqTIwMTEgd3d3LnNvbmdnYWxheHkuY29tAP8DHERyYWFpIERhbiA3OTcyMDQgKFdpbGwgVHVyYSkA/1EDBsgcAP9YBAQCGAgA/1kC/gB48AV+fwkB94RYsHgAAnkAA8ADArAHWgMKQAJbKANdAAJeAAMLfwJHQANIQAJJQANKQAZlAAFkAAEGAgEmABWxeAACeQADwSACsQdaAwpAAlsUA10AAl4AAwt/AkdAA0hAAklAA0pABmUAAWQAAQYCASYAFbJ4AAJ5AAPCMAKyB1ADCkACWzwDXSMCXgADC38CR0ADSEACSUADSkAGZQABZAABBgIBJgAUs3gAA3kAAsMaA7MHcwIKQANbKAJdAANeAAILfwNHQAJIQANJQAJKQAdlAAFkAAEGAgEmABW0eAACeQADxDUCtAdQAwpAAlsoA10AAl4AAwt/AkdAA0hAAklAA0pABmUAAWQAAQYCASYAFLV4AAN5AALFHAO1B18CCl8DWygCXQADXgACC38DR0ACSEADSUACSkAHZQABZAABBgIBJgAUtngAA3kAAsYZA7YHQQIKKANbKAJdAANeAAILfwNHQAJIQANJQAJKQAdlAAFkAAEGAgEmABS3eAADeQACxxsDtwdQAgpfA1soAl0eA14AAgt/A0dAAkhAA0lAAkpAB2UAAWQAAQYCASYAFbh4AAJ5AAPIAAK4B2QDCkACWygDXQACXgADC38CR0ADSEACSUADSkAGZQABZAABBgIBJgAUuXgAA3kAAskAA7kHVQIKQANbKAJdAANeAAILfwNHQAJIQANJQAJKQAdlAAFkAAEGAgEmAA26eAACeQADykMCugdVAwpLAlsoA10UAl4AAwt/AkdAA0hAAklAA0pAB2UAAWQAAQYCASYAGbt4AAJ5AAPLQgK7B1UDCjcCWygDXQoCXgADC38CR0ADSEACSUADSkAHZQABZAABBgIBJgAWvHgAA3kAAswyA7wHPAIKQANbKAJdLQNeAAILfwNHQAJIQANJQAJKQAdlAAFkAAEGAgEmAIM5mSxQHoksEYNCmSwoHoksEYNCmSwoHoksEYIikE1rAFljf4BZEQFNESCZLCgHkFtfAU9nFoksEYFkgFsRAU8ROZBdXQFRZYESgF0RAVEREJUuYwCWNV4AmSNaACpmAJw1SwA6TQA+SwKRImoEljpeA5BeaAFScAKWPl4GQV4MiSMRACoRgQ2FLhGBDJUuVQKGOhEAljpRB4Y1EQCWNVEAmSpNBoBeEQFSEReJKhE0hS4RFoEiES6VMl0DhjoRAJc+YQaQTW4AWWYBhjURAJY1bQCXQVgAmShkACpmA5EmbAKXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhFbhTIRbJUyWQSWOlEHgFkRAJY1UQCZKjIBgE0RHYkqETeBJhEThTIRL5U1YAKGOhEDkFZmAUpuA4Y1EQCWNV4AmSNaACpDA5EpaAOWOl4GPl4GQV4MiSMRACoRgQKZKlweiSoRDYU1EW6GOhEAljpRApU1VgWGNREAljVRAJkqQRCAVhEBShENiSoRHYEpEUCFNREelTJeAIY6EQCXPlcEkFllAU1tAoY1EQCWNW0Al0FhAJkoZAAqZgGRJmgEl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRMuVwZDqBJhEihTIRPZY6UQSVNWYDkSlpAJY1UQCZKkEA5QBAHokqEQaAWREBTRE2gSkRDIU1EQ+MOhEBNREAPhEihjoRBpw1SwA5TQA8TQGVKWMAhjURAJY1XgCZI1oAKmYBkR10A5BPbgBbZgKWOV4GPF4GQV4MiSMRACoRgQ2FKRGBDJUpVQKGOREAljlRB4Y1EQCWNVEAmSpNHokqERyAWxEBTxEIgR0RD4UpEUSVLV0DhjkRAJc8YQWRIWgCkFdgAIY1EQCWNW0Al0FYAJkoZAAqZgGQS2gEl0VhAZY5bQSGPBECljxtBIZBEQKWQW0MiSgRACoRPYY1EQY5EQGHPBEFhjwRAodBEQWGQREAh0URW4UtER2AVxEBSxFOlS1ZBJY5UQGQVGYBSG4FljVRAJkqQR6JKhFCgSERCIUtES+VMGAChjkRBZEkcAKGNREAljVeAJkjWgAqYAaWOV4GPF4GQV4MiSMRACoRgS2FMBFuhjkRAJY5UQKVMFYFgFQRAIY1EQCWNVEAmSpBAYBIER2JKhFdhTARD4EkEQ+VLV4AhjkRAJc8VwSQUWMBRWsBkSFyAYY1EQCWNW0Al0FhAJkoZAAqZgWXRWEBljltBIY8EQKWPG0EhkERApZBbQyJKBEAKhE9hjURBjkRAYc8EQWGPBECh0ERBYZBEQCHRREy5XBkKIEhETSFLRE9ljlRBJUwZgGRJGkCljVRAJkqQQDlAEAeiSoRG4BREQFFESCBJBENhTARD4w5EQA8ESOGOREGkEZsAFJkAZUuYwCGNREAljVeAJkjWgAqZgCcOk4APk0BkSJsBZY6XgY+XgZBXgyJIxEAKhGCG4Y6EQCWOlEHhjURAJY1UQCZKk0agSIRBIkqEXuGOhEAlz5hBJEiZgOGNREAljVtAJdBWACZKGQAKmYFl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEDhS4RAoY+EQKHQREFhkERAIdGEWSAUhEBRhFSgSIRFJY6UQc1UQCZKkEeiSoRWIw1EQA6EQE+ESCVM2AChjoRBJEnZwOQS2IAhjURAJY3XgCZI1oAKmUAnDdPADpKAD9NAZBGagE3bQBDYgSWOl4GP14GQ14MiSMRACoRgS2FMxEKgEsRATcRAEMRBUYRUYEnEQ2GOhEAljpRApUyVgGQN2EARl8ASmIBQ1oDhjcRAJY3UQCZKkECkSZnHIkqES6AQxEENxEARhECShEZgSYREIUyER6VM14AhjoRAJc/VwSQQ10ARmEBN1wAS2UChjcRAJY3bQCXQ2EAmShkACpmA5EnZwKXRmEBljptBIY/EQKWP20EhkMRApZDbQyJKBEAKhE9hjcRBjoRAYc/EQWGPxECh0MRBYZDEQCHRhFNgDcRAkMRAUYREksRLIUzEQqBJxEzljpRBJBFYwBIbwCVNWYBkSlnApY3UQCZKkEBkE1rATlvHIkqEViMOhEBNxEAPxEihjoRBzcRAJY5XgCZI1oAKmYAnDlJADxOAEFKBpY8XgZBXgZFXgyJIxEAKhGBDIU1EUaBKRFHlTVVAoY8EQCWPFEHhjkRAJY5UQCZKk0BkSlhHYkqETSFNREagSkRKpUzXQOGPBEAlzxhB4Y5EQCWOW0Al0FYAJkoZAAqZgORJ2oCl0VhAZY8bQSGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URW4UzEWyVNVkEljxRBzlRAJkqQR6JKhELgScRP4U1ES+VMmAChjwRB5EmYgCGOREAljleAJkjWgAoZAaWPF4GQV4GRV4MiSMRACgRgQKZKFEeiSgRDYUyEW6GPBEAljxRApUyVgWGOREAljlRAJkoOQSTPlsA/wUHJ2sgSGViIBqJKBENgSYRI4UyEQqDPhFBlTBeAIY8EQCXPFcGkSRrAYY5EQCWOW0Al0FhAJkoZAAqZgGTQV4A/wUFbWlqbiAEl0VhAZY8bQSGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URZINBESqFMBE9ljxRBJUwZgOWOVEAmS5JD4EkEQ+JLhEIgEgRBE0RA+MAPwGAOREGRREC4wA6BIUwEQfjADQMAC4KACwLACgUjDkRATwRAEERIoY8EQSTRlcA/wUDbnVtAuMAKgGVLmMAljVeAIY5EQCZI1oAKmYCkSJoBJY6XgTjACwClj5eBkFeA+MAMAmJIxEAKhEC4wA0CgA6DAA/CgBAa4UuEYEMlS5VAoY6EQCWOlEHhjURAJY1UQCZKk0eiSoRFoEiER6FLhFElTJdA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhErg0YREoY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRW4UyEWyVMlkEljpRA5NFYwD/BQRtZXIgBJY1UQCZKkEeiSoRAoEmETeDRRERhTIRL5U1YAKGOhEHk0NZAIY1EQCWNV4AmSNaACphAP8FBWRvZW4gA5EpZgOWOl4GPl4GQV4MiSMRACoRgS2FNRFuhjoRAJY6UQKVNVYFhjURAJY1UQCZKkESg0MRDIkqER2BKRFAhTURG5NBZAD/BQN2ZXIDlTJeAIY6EQCXPlcHhjURAJY1bQCXQWEAmShkACpmAZEmZgSXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhEy5XBkToNBEQ6FMhE7kz5gAP8FAmFuApY6UQSVNWYDljVRAJkqQQDlAEAeiSoRKYEmESCFNREyhjoRB5UuYwCGNREAljVeAJkjWgAqZgKRImgEljpeA4M+EQOWPl4GQV4MiSMRACoRgQ2FLhGBC5M6YgD/BQZkZXJlbiABlS5VAoY6EQCWOlEHhjURAJY1UQCZKk0eiSoRFoEiER6FLhFElTJdA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhFbhTIRVYM6EReVMlkEljpRBzVRAJkqQR6JKhECgSYRSIUyES+VNWAChjoRBzURAJY1XgCZI1oAKmQDkSlmA5Y6XgY+XgZBXgyJIxEAKhGBLYU1EW6GOhEAljpRAZM+XQD/BQZzaW5kcyABlTVWBYY1EQCWNVEAmSpBHokqER2BKRFAhTURHpU1XgCGOhEAlz5XB4Y1EQCWNW0Al0FhAJkoZAAqZgGRJmYEl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YREoU1EQqDPhEWlTdVWoU3ETSTQVQA/wUDamUgC5Y6UQSVNWYDgSYRAJEwcwCWNVEAmSpBHokqETKBMBEXhTURBOMAPwaDQREF4wA8CwA2CwA0DYY6EQDjADIHlTNjAIY1EQCWN14AmSNaACpmApEnaAGTQV0A/wUEbWlqIAOWOl4GP14C4wAwBJZDXgyJIxEAKhEd4wAyFAA2DAA4CgA8CwA/CgBAMYUzEYEMlTNVAoY6EQCWOlEHhjcRAJY3UQCZKk0eiSoRFoEnEQODQREbhTMRRJU3XQOGOhEAlzphBpM/YQD/BQN2ZXIBhjcRAJY3bQCXP1gAmShkACpmA5EragKXQ2EBljptBIY/EQKWP20EhkMRApZDbQyJKBEAKhE9hjcRBjoRAYc6EQWGPxEChz8RBYZDEQCHQxFbhTcRRIM/ESiVN1kEljpRBzdRAJkqQQGTQ2kA/wUFbGlldCAA/wUBDR2JKhECgSsRSIU3ES+VOmAChjoRBzcRAJY3XgCZI1oAKmADkS5mA5Y6XgY/XgZDXgyJIxEAKhGBLYU6EUazAQIKAQcLAQsOAQ4FhjoRAJY6UQKVOlYDswESAoY3EQCWN1EAmSpBCbMBFQsBGAqJKhECswEdCQEgCwElB4EuEQSzASgLAS0KATALATULATgLAT0GhToRBrMBQAsBRA2VN14AhjoRAJc6VwazAUcBhjcRAJY3bQCXP2EAmShkACpmAZErZgSXQ2EBljptBIY/EQGzAU0Blj9tBIZDEQKWQ20EswFRCIkoEQAqEQKzAVILAVULAVcMAVgKAVoMAV0DhjcRBjoRALMBXwGHOhEFhj8RAoc/EQWGQxEAh0MRCbMBYQsBYgoBZAsBZgnlcGQNswFnKwFpJIU3ESizAWsVljpRBJU6ZgOWN1EAmSpBAOUAQB6JKhEpgSsRIIU6EQmzAWkLAWcVAWYJhjoRB5Q/YwBDYwBGYwCVM2MAhjcRAJY3XgCZI1oAKmYA5AAAApEnaASWOl4E5AAFApY/XgaDQxEAlkNeALMBWgLkAQoIswFVAokjEQAqEQDkAg8IswFPAuQDFAmzAUkB5AMZCrMBQADkBB4KBSMBswE3CeQGKAKzASsI5ActArMBIQjkBzIDswEYB+QINwSzAQ4G5Ak8BbMBAgXkAEAGswEAI4UzEYEMlTNVAoY6EQCWOlEHhjcRAJY3UQCZKk0eiSoRFoEnER6FMxFElTddA4Y6EQCXOmEHhjcRAJY3bQCXP1gAmShkACpmA5EragKXQ2EBljptBIY/EQKWP20EhkMRApZDbQyJKBEAKhE9hjcRBjoRAYc6EQWGPxEChz8RBYZDEQCHQxFbhTcRbJU3WQSWOlEHN1EAmSpBHokqEQKBKxEU5AA/CwA8CgA6DAA2CgA0CYU3EQLkADILADAOAC4IACwBk0FSAP8FBVdhbnQgAoRGEQmVOmAChjoRBJRIYQOGNxEAljdeAJkjWgAqYgORLmYDljpeBj9eBkNeDIkjEQAqEQLkADALADILADYMADwJAD8LAEB1hToRboY6EQCWOlEClTpWBYY3EQCWN1EAmS5JHokuER2BLhEsg0ERFIU6ER2TQV8A/wUDaWsgAZU3XgCGOhEAlzpXB4Y3EQCWN20Alz9hAJkoZAAqZgGRK2YEl0NhAZY6bQSGPxEClj9tBIZDEQKWQ20MiSgRACoRPYY3EQY6EQGHOhEFhj8RAoc/EQWGQxEAh0MRMYNBEQHlcGRchTcRPZY6UQSVOmYDljdRAJkqQQDlAEAeiSoRF+MAPwoAOgiBKxED4wA0DAAuCgAsB4U6EQPjACgihD8RAEMRCJNIVgD/BQR3aWwgBYY6EQPkAAAElDxiAEFiAEViAIRIEQCVNWMAhjcRAJY5XgCZI1oAKmYCkSloBJY8XgDkAAUC4wAqBJZBXgTkAQoClkVeAeMALAfkAg8EiSMRACoRAOMAMAbkAxQE4wA0BuQDGQXjADoF5AQeB+MAPwPkBSMH4wBAA+QGKAoHLQoHMgoINwoJPAoAQC2FNRF0tAEBCwEDCwEFApU1VQKGPBEAljxRB4Y5EQCWOVEAmSpNALQBCQoBCwsBDAmJKhECtAEOCwEQCYEpEQy0ARILARMHhTURBLQBFQsBFhgBGAgBGQsBGwqVOV0BtAEdAoY8EQCXPGEHhjkRAJY5bQCXQVgAmShkACpmA5EtagKXRWEBljxtBIZBEQKWQW0AtAEfBIZFEQKWRW0MiSgRACoRBLQBIAGDSBEKtAEhFQEjCwElCwEmA4Y5EQY8EQGHPBEBtAEoBIZBEQKHQREFhkURAIdFEQC0ASoKASsLAS0LAS8LATALATIKATMLATcLATgFhTkRBrQBOhUBOwsBPQsBPwsBQBUBQhYBRAWVOVkEk0hLAJY8UQD/BQRtZXQgArQBRgWWOVEAmSpBBrQBRwoBSQ6JKhECgS0RBrQBSwsBTAsBTSABTwsBUQGFOREWtAFSBYNIEQS0AVMQlTxgAoY8EQS0AVUDhjkRAJY5XgCZI1oAKmIDkTBmApNFXwD/BQNuaWUBljxeBkFeBkVeALQBVwyJIxEAKhEKtAFYIAFaFgFbFgFdKwFfIAFhDIU8ERiDRREHtAFiNgFhCwFfCwFdA4Y8EQCWPFEClTxWBZNBYQCGOREAljlRAJkqQQD/BQVtYW5kIAG0AVoLAVUKAVEIiSoRA7QBSwsBQgsBOgSBMBEHtAEzCgErAYQ8EQBBEQBFEQq0ASULAR0LARYLAQ4DhTwRB7QBBwsBAQsBAAGVOV4AhjwRAJc8VwSDQREDhjkRAJY5bQCXQWEAmShkACpmAZEtZgSXRWEBljxtBIZBEQKWQW0EhkURApZFbQyJKBEAKhE9hjkRBjwRAYc8EQWGQRECh0ERBYZFEQCHRRGBDoU5ETaTP2kA/wUEc3ByZQeWPFEElTxmA4EtEQCRMHMAljlRAJkqQR6JKhEygTARF4U8ETKGPBEHlTVjAIY5EQCWOV4AmSNaACpmApEpaASWPF4GQV4GRV4MiSMRACoREIM/EX2FNRGBDJU1VQKTPGUAhjwRAJY8UQD/BQVrZW4sIAeGOREAljlRAJkqTR6JKhEWgSkRHoU1EUSVOV0DhjwRAJc8YQeGOREAljltAJdBWACZKGQAKmYDkS1qApdFYQGWPG0EhkERApZBbQSGRREClkVtALMBAQsBBQGJKBEAKhEKswEMCwESCgEWCwEbCwEhCIY5EQOzASYDhjwRAYc8EQWGQRECh0ERAbMBKwSGRREAh0URBbMBMAsBMwsBOAsBOwsBQAoBRAsBRwwBSwmFOREBswFNCwFRCgFTCwFXCwFaCwFdCwFfCgFhCwFiCwFkCpU5WQSWPFEHOVEAmSpBAbMBZhUBZAiJKhECgS0RAbMBYgsBXwsBWwoBWAqDPBEBswFTCwFPCwFJBoU5EQWzAUAKATgLAS8LASYKlTxgAoY8EQazAR0BhjkRAJY5XgCZI1oAKmQDkTBmA5Y8XgOzARUDlkFeBkVeArMBDgqJIxEAKhEBswEDCgEAgSKFPBFrkz9jAP8FBydrIGhlYiADhjwRAJY8UQKVNVYFhjkRAJY5UQCZKkEeiSoRHYEwEUCFNREelTdeAIY8EQCXPFcHhjkRAJY5bQCXQWEAmShkACpmAZEpZgSXRWEBljxtA4M/EQGGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URgQ6FNxE9ljxRAZM/XwD/BQJ0ZQOVOWYDljlRAJkqQR6JKhEpgSkRD4M/EQbjAD8KADoBhTkRCuMANAwALgoALAoAKAiGPBEHlTpjAJY1XgCGOREAmSNaACpmApEiaACTP10A/wUFdmVlbCAEljpeBj5eBkFeDIkjEQAqERHjACoLACwLADAKADQLADoMAD8KAEA7hToRgQyVOlUChjoRAJY6UQeGNREAljVRAJkqTR6JKhEWgSIRHoU6ESSDPxEglTJdA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBkz5gAJY6bQD/BQN2ZXIEhj4RApY+bQSGQREClkFtDIkoEQAqET2GNREGOhEBhz4RBYY+EQKHQREFhkERAIdGEVuFMhE1gz4RN5UyWQSWOlEHk0FhAJY1UQCZKkEA/wUGZHJpZXQgAP8FAQ0eiSoRAoEmEUiFMhEvlTVgAoY6EQOUQV0CRlwCPlwAhjURAJY1XgCZI1oAKmADkSlmA5Y6XgY+XgZBXgyJIxEAKhGBDLMBAwwBBQoBCQuFNREAswEMCgEQCwETCwEVCwEYCwEbCgEfCwEhCwElDgEoCoY6EQCWOlEAswErApU1VgWGNREAljVRAJkqQQSzAS0KATALATMFiSoRBrMBNwsBOAsBOwGBKREKswE9CgE/CwFCCwFECwFGCgFHAYU1EQuzAUkKAUsJlTJeAIY6EQCXPlcHhjURAJY1bQCXQWEAmShkACpmAZEmZgCzAU0El0ZhAZY6bQSGPhEClj5tArMBTwKGQREClkFtCLMBUQSJKBEAKhEGswFTFQFVDAFXCgFYDIY1EQY6EQGHPhEDswFaAoY+EQKHQREFhkERAIdGES6zAVsE5XBkMbMBXRUBXxaFMhE9ljpRBJU1ZgKzAV0BgSYRAJEpcwCWNVEAmSpBAOUAQAqzAVsKAVgC5AA/CIkqEQGzAVUC5AA8CoNBEQCzAU8B5AA4CrMBSQHkADIKswFCAOQALgqzATsB5AAqBIEpEQezATMB5AAkCbMBKwHkAB8FhTURBrMBJQHkABsJswEdAOQAGQqzARUC5AAVEAARAbMBDgKERhEBPhEChjoRA7MBAAGUSmEDRmEAlS5jAIY1EQCWNV4AmSNaACpmApEiaASWOl4GPl4GQV4MiSMRACoRDOQAEwoAFwsAGQsAHQsAIgoAJgsALAsAMAsANgsAOgsAPgoAQAuFLhGBDJUuVQKGOhEAljpRB4Y1EQCWNVEAmSpNHokqERaBIhEehS4RRJUyXQOGOhEAlz5hB4Y1EQCWNW0Al0FYAJkoZAAqZgORJmoCl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRW4UyEWyVMlkEljpRBzVRAJkqQR6JKhECgSYRJLQBAQkBAwsBBQsBCQWFMhEGtAELCwEODwETDQEVApU1YAKGOhEGtAEYAYY1EQCWNV4AmSNaACpqA5EpZgOWOl4FtAEZAZY+XgZBXgO0AR0JiSMRACoRArQBHwwBIAkBIQsBIxYBJQsBJgoBKAsBKg0BKwkBLRSZKlACtAEvCgEwEokqEQW0ATIIhTURArQBMxYBNRUBNxUBOAsBOg0BOwsBPQmGOhEAljpRApU1VgC0AT8Fkz5aAIY1EQCWNVEAmSpBAP8FBU1hYXIgELQBQAwBQgKJKhEItAFECwFGCoEpEQK0AUcJAUkWAUsYAU0HhTURFrQBTwiVMl4AhjoRAJc+VwK0AVEFhjURAJY1bQCXQWEAmShkAZEmZgSXRmEBljptBIY+EQKWPm0EhkERALQBUgKWQW0JtAFTA4koERO0AVUqhjURAbQBVwWGOhEBhz4RBYY+EQKHQREFhkERAIdGES+0AVMDmSpBAOVwZAe0AVIMAU8KAUsBiSoRCrQBRAsBPwoBNwsBLwsBJQmFMhECtAEbCwESCgEHDgEAEYM+EQeWOlEElTVmA5Y1UQCZKlMA5QBAApNBVwD/BQJpbhyJKhEpgSYRA4RBER2FNREEg0ERB+MAPhCEShEDRhEC4wA8EoY6EQHjADoGlS5jAIY1EQCWNV4AmSNaACpmAZNGWwD/BQVkaWVuIAGRImgEljpeAeMAOgWWPl4F4wA8AZZBXgrjAD4CiSMRACoRBOMAOAUAQIEEhS4RgQyVLlUChjoRAJY6UQeGNREAljVRAJkqTR6JKhEWgSIRHoUuEUSVMl0DhjoRAJc+YQeGNREAljVtAJdBWACZKGQAKmYDkSZqApdGYQGWOm0Ehj4RApY+bQKDRhEChkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhFbhTIRbJUyWQSWOlEFk0VfAP8FA2plIAKWNVEAmSpBHokqEQKBJhE6g0URDoUyES+VNWAChjoRBpNDWwD/BQRtaWogAYY1EQCWNV4AmSNaACpfA5EpZgOWOl4GPl4GQV4MiSMRACoRgS2FNREfg0MRT4Y6EQCWOlEClTVWAZNBYAD/BQR3aWwgBIY1EQCWNVEAmSpBHokqER2BKRFAhTURGoNBEQSVMl4AhjoRAJc+VweGNREAljVtAJdBYQCZKGQAKmYBkSZmBJdGYQGWOm0Ehj4RApY+bQSGQREClkFtDIkoEQAqET2GNREGOhEBhz4RBYY+EQKHQREFhkERAIdGETLlcGRchTIRPZY6UQGTPmIA/wUEdHJlZgOVNWYDljVRAJkqQQDlAEAeiSoRKYEmESCFNREyhjoRB5UuYwCGNREAljVeAJkjWgAqZgKRImgCgz4RApY6XgY+XgZBXgyJIxEAKhGBDYUuEYEMlS5VAoY6EQCWOlEGkzphAP8FBGZlbiABhjURAJY1UQCZKk0eiSoRFoEiER6FLhFElTJdA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE1swEDCIY1EQGzAQsFhjoRAYc+EQWGPhEBswEQAYdBEQWGQREAh0YRA7MBFgsBGwwBIQoBJgsBKwoBMgsBNw0BOwqFMhEAswFACwFECgFJCwFMCwFPCwFSCwFVCgFXCwFYFpUyWQKzAVoCljpRBzVRAJkqQR6JKhECgSYRI7MBWBYBVwoBUwWFMhEGswFRCwFMCgFGDQE/B5U1YAKGOhEEswEtA4Y1EQCWNV4AmSNaACpjA5EpZgKDOhEBljpeA7MBIwOWPl4GQV4BswEbC4kjEQAqEQCzARIKAQcMAQCBF4U1EWuTPmEA/wUEYmVuIAOGOhEAljpRApU1VgWGNREAljVRAJkqRR6JKhEdgSkRIIM+ESCFNREehjoRAJc+VwKTQWAA/wUDaWsgBZU1XgCGNREAljVtAJdBYQCZKGQAKmYBkSZmBJdGYQGWOm0Ehj4RApY+bQSGQREClkFtDIkoEQAqET2GNREGOhEBhz4RBYY+EQKHQREFhkERAIdGEQqFNREolTdVEINBEUqFNxE74wA6BJY6UQSVNWYDgSYRAJEpcwCWNVEAmSpBAOMANgkAMg0ALgiJKhEC4wAsCgAoDAAmCwAkD4EpEReFNREQ4wAmCQAoCwAsDJNDYgD/BQVoaWVyIAD/BQENAoY6EQeVM2MAhjURAJY3XgCZI1oAKmYCkSdoAeMANAOWOl4GP14B4wA6BZZDXgbjAD4GiSMRACoRBOMAQIEJhTMRgQyVM1UChjoRAJY6UQeGNxEAljdRAJkqTR6JKhEWgScRHoUzEUSVN10DhjoRAJc6YQeGNxEAljdtAJc/WACZKGQAKmYDkStqApdDYQGWOm0Ehj8RApY/bQSGQxEClkNtDIkoEQAqEQWzAQMLAQkKAQ4LARMLARgLARsChjcRBjoRAYc6EQKzASADhj8RAoc/EQWGQxEAh0MRALMBIwsBKAsBKwsBLwsBMgoBNwsBOAsBOwwBPQOFNxEHswFACgFCCwFECwFGCwFHCwFJCgFLGAFNCwFPApU3WQSWOlEFswFRApY3UQCZKkES5AA/AbMBUwrkADwBiSoRALMBVQKBKxEH5AA2ArMBVwnkADILAC4BswFYCuQAKAsAJAKzAVoI5AAfArMBWwmFNxEA5AAbCwAXDLMBXQHkABMNAA0KlTpgAoY6EQWUQ2ECPGEAP2EAhjcRAJY3XgCZI1oAKmMDkS5mALMBXwOWOl4GP14GQ14MiSMRACoRBeQADwsAEwsAFwoAGwsAHwsAJAsAKAsALAqzAWEA5AAwCwAyCwA2CwA4CrMBXwHkADoKswFdAOQAPAyzAVsJAVgB5AA+BoU6EQWzAVcKAVMMAU8JAUsB5AA/CrMBRgsBQAHkAEAKswE6AoNDEQmzATUKAS8OASgGhjoRAJY6UQKVOlYCswEhA4Y3EQCWN1EAmSpBCLMBGQsBEguJKhEAswEJCgEBDAEAB4EuEUCFOhEelTdeAIY6EQCXOlcHhjcRAJY3bQCXP2EAmShkACpmAZErZgSXQ2EBljptBIY/EQKWP20EhkMRApZDbQyJKBEAKhE9hjcRBjoRAYc6EQWGPxEChz8RBYZDEQCHQxGBDoU3ET2WOlEElTpmA5Y3UQCZKkEeiSoRKYErESCFOhEuhEMRAjwRAD8RAoY6EQSURlkDP1kAQ1kAlTNjAIY3EQCWN14AmSNaACpmApEnaASWOl4GP14GQ14MiSMRACoRgQ2FMxGBDJUzVQKGOhEAljpRB4Y3EQCWN1EAmSpNHokqERaBJxEehTMRRJU3XQOGOhEAlzphB4Y3EQCWN20Alz9YAJkjWgAoZAAqZgORJ2oCl0NhAZY6bQSGPxEClj9tBIZDEQKWQ20MiSMRACgRACoRPYY3EQY6EQGHOhEFhj8RAoc/EQWGQxEAh0MRW4U3EWyVN1kEljpRA+MAPwSWN1EAmSpBB+MAOgsANgoAMgKJKhEJ4wAsCwAqCwAmCwAkIIU3EQiBJxEO4wAmCgAqD5U6YAKGOhEBk0NcAP8FBkRyYWFpIAXjADABhjcRAJY3XgCZI1oAKmADkSZmA5Y6XgPjADQDlj9eBkNeA+MAOgmJIxEAKhEA4wA+CwBAgSKFOhFuhjoRAJY6UQKVOlYFhjcRAJY3UQCZKkEeiSoRUYNDEQyFOhEQgSYRDpU3XgCGOhEAlzpXB4Y3EQCWN20Alz9hAJkjWgAoZAAqZgGRJGYBk0VeAP8FBGRhbiADl0NhAZY6bQSGPxEClj9tBIZDEQKWQ20MiSMRACgRACoRPYY3EQY6EQGHOhEFhj8RAoc/EQWGQxEAh0MRMuVwZDSDRREohTcRG4RGEQM/EQBDER+WOlEElTpmA5Y3UQCZKkEA5QBAHokqETbjAD4KADoJhToRAuMANgsAMgTkAA0J4wAuCQAsCwAqAoEkEQKGOhEClEZfBT5fAEFfAJUuYwCWNV4AhjcRAJkjWgAqZgKRImgAk0ZhAP8FAnplBJY6XgY+XgLkAA8ElkFeBuQAEwXjACwBiSMRACoRBeQAFwXjAC4G5AAbBuMAMAXkAB8F4wA0BuQAJAbjADgE5AAoBeMAPAbkACwG4wA/BeQAMAbjAEAF5AAyCwA2CgA4CwA6CwA8EYUuEQXkAD4rAD8VAEBHlS5VAoY6EQCWOlEHhjURAJY1UQCZKk0eiSoRFYNGEQGBIhEehS4RRJUyXQOGOhEAlz5hBpNGWgD/BQR2ZW4gAYY1EQCWNW0Al0FYAJkoZAAqZgORJmoCl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRW4UyEQmDRhFjlTJZBJY6UQc1UQCZKkEeiSoRAoEmEUiFMhEvlTVgAoY6EQOTQVsA/wUCbmUEhjURAJY1XgCZI1oAKl8DkSlmA5Y6XgY+XgZBXgyJIxEAKhGBLYU1EW6GOhEAljpRApU1VgWGNREAljVRAJkqQR6JKhEdgSkRP4NBEQGFNREelTJeAIY6EQCXPlcGkz5aAP8FBGdlbiABhjURAJY1bQCXQWEAmShkACpmAZEmZgSXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhEy5XBkLYM+ES+FMhE54wA/BJY6UQSVNWYDljVRAJkqQQDjAD4A5QBACuMAOgsAOAmJKhEC4wA2CwA0HIEmESCFNREF4wA2CgA4AoRGEQnjADoMAD4KAEABlEVeAYY6EQWTQ1oA/wUCemUClDxeAIQ+EQCVNWMAhjURAJY5XgCZI1oAKmYCkSloBJY8XgZBXgZFXgyJIxEAKhGBDYU1EYEMlTVVAoY8EQCWPFEHhjkRAJY5UQCZKk0eiSoRFoEpER6FNREYg0MRLJUzXQOGPBEAlzxhAZM/XQD/BQR2ZW4gBoY5EQCWOW0Al0FYAJkoZAAqZgORJ2oCl0VhAZY8bQSGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URT4M/EQyFMxFslTNZBJY8UQc5UQCZKkEeiSoRAoEnEUiFMxEvlTJgAoY8EQGTPF8A/wUFdHdlZSAGhjkRAJY5XgCZI1oAKmQDkSZmA5Y8XgZBXgZFXgyJIxEAKhGBLYUyEW6GPBEAljxRApUyVgWGOREAljlRAJkqQR6JKhEdgSYRH4M8ESGFMhEelTBeAIY8EQCXPFcDkzlgAP8FBG51bCAEhjkRAJY5bQCXQWEAmShkACpmAZEkZgSXRWEBljxtBIZBEQKWQW0EhkURApZFbQyJKBEAKhEDhEERAkURBzwRMYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URgQ6FMBE9ljxRBJUwZgOWOVEAmSpBHokqESmBJBEghTARAoM5ETCTOmcAhjwRAP8FBXZpZXIgAP8FAQ0A/wUBCgeVLmMAljVeAIY5EQCZI1oAKmYCkSJoBJY6XgY+XgZBXgyJIxEAKhGBDYUuETmzAQEJAQILAQULAQkLAQwKAQ4LARILARMJlS5VAoY6EQCWOlEBswEWBoY1EQCWNVEAmSpNBLMBGQoBHQsBIAWJKhEHswEhCgElBYEiEQazASgKASsLAS8DhS4RCLMBMgsBNQsBOAoBOxEBPwuVMl0DhjoRAJc+YQazAUcBhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBljptBIY+EQCzAUkClj5tBIZBEQKWQW0DswFLCYkoEQAqEQKzAU0KAU8WAVEMAVIKAVMFhjURBbMBVQGGOhEBhz4RBYY+EQKHQRECswFXA4ZBEQCHRhEIswFYFgFaCgFbCwFdCwFfFgFhB4UyEQOzAWIWAWQ2AWYdlTJZA7MBZwGWOlEHNVEAmSpBGbMBaQWJKhECgSYRBLMBa0SFMhESswFpCwFnEpU1YAKGOhEBswFmApQ6XQJBXAI+XACGNREAljVeAJkjWgAqYAORKWYAswFfA5Y6XgY+XgKzAVsElkFeB7MBWAWJIxEAKhEFswFTCwFPBYM6EQazAUkLAUILAToKATILASgLASALARkLARIKAQsLAQILAQAmhTURboY6EQCWOlEClTVWBYY1EQCWNVEAmSpBHokqER2BKRFAhTURHpUyXgCGOhEAlz5XB4Y1EQCWNW0Al0FhAJkoZAAqZgGRJmYEl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRMuVwZFyFMhE9ljpRBJU1ZgOBJhEAkSlzAJY1UQCZKkEA5QBAFuQAPwiJKhED5AA8CwA4CwAyCgAuCwAqBIEpEQjkACQKAB8FhTURB+QAGwkAGQwAFRAAEQOEQREBPhEChjoRBJRGYQNBYQCVLmMAhjURAJY1XgCZI1oAKmYCkSJoBJY6XgY+XgZBXgyJIxEAKhEM5AATCgAXCwAZCwAdCwAiCgAmCwAsCwAwCwA2CwA6CwA+CgBAC4UuEYEMlS5VAoY6EQCWOlEHhjURAJY1UQCZKk0eiSoRFoEiER6FLhFElSldA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EdagKXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhFbhSkRbJUpWQSWOlEHNVEAmSpBHokqEQKBHREktAEBCQEDA5kqPAi0AQULAQkFhSkRBokqEQC0AQsLAQ4PARMNARUClStgAoY6EQa0ARgBhjURAJY1XgCZI1oAKmgDkR9mA5Y6XgW0ARkBlj5eBkFeA7QBHQmJIxEAKhECtAEfDAEgCQEhCwEjFgElCwEmCgEoCwEqDQErCQEtFJkqQQK0AS8KATASiSoRBbQBMgiFKxECtAEzFgE1FQE3FQE4CwE6DQE7CwE9CYY6EQCWOlEClStWALQBPwWGNREAljVRAJkqOhC0AUAMAUICiSoRCLQBRAsBRgqBHxECtAFHCQFJFgFLGAFNB4UrERa0AU8IlS1eAIY6EQCXPlcCtAFRBYY1EQCWNW0Al0FhAJkoZAAqZgGRIWYEl0ZhAZY6bQSGPhEClj5tBIZBEQC0AVIClkFtCbQBUwOJKBEAKhETtAFVKoY1EQG0AVcFhjoRAYc+EQWGPhECh0ERBYZBEQCHRhEvtAFTA5M+RwD/BQcnayBIYWQgB7QBUgwBTwoBSwsBRAsBPwoBNwsBLwuDPhEAtAElCYUtEQK0ARsLARIKAQcOAQAYljpRBJUtZgKTQUIA/wUCYmUBljVRAJkqQR6JKhEpgSERA4Q6ER2FLREDg0ERGIRGEQNBERSGOhEGk0ZfAP8FBmxvb2ZkIAGVLmMAhjURAJY1XgCZI1oAKmYAnDVLADpNAD5LApEiaASWOl4GPl4GQV4L4wA/AYkjEQAqEVXjAEA4hS4RgQyVLlUChjoRAJY6UQeGNREAljVRAJkqTR6JKhEWgSIRHoUuEUSVMl0DhjoRAJc+YQeGNREAljVtAJdBWACZKGQAKmYDkSZqApdGYQGWOm0Ehj4RApY+bQSGQREClkFtDIkoEQAqET2GNREGOhEBhz4RBYY+EQKHQREFhkERAIdGEQmDRhFShTIRbJUyWQSWOlEFk0ViAP8FBGRhdCACljVRAJkqQR6JKhECgSYRSIUyEQKDRREtlTVgAoY6EQeTQ2MAhjURAJY1XgCZI1oAKlsA/wUDaWsgA5EpZgOWOl4GPl4GQV4MiSMRACoRgRiDQxEVhTURboY6EQCWOlEClTVWBYY1EQCWNVEAmSpBHokqER2BKRFAhTURHpUyXgCGOhEAlz5XBpNBagD/BQNqZSABhjURAJY1bQCXQWEAmShkACpmAZEmZgSXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhEy5XBkXIUyEQKDQRE7ljpRBJU1ZgKTPl8A/wUFbmlldCABljVRAJkqQQDlAEAeiSoRKYEmESCFNREsgz4RBoY6EQeVLmMAhjURAJY1XgCZI1oAKmYCkSJoBJY6XgY+XgZBXgyJIxEAKhGBDYUuEYEMlS5VAoY6EQCWOlEEkzpnAP8FBW1lZXIgA4Y1EQCWNVEAmSpNHokqERaBIhEehS4RRJUyXQOGOhEAlz5hB4Y1EQCWNW0Al0FYAJkoZAAqZgORJmoCl0ZhAZY6bQSGPhEClj5tBIZBEQKWQW0MiSgRACoRPYY1EQY6EQGHPhEFhj4RAodBEQWGQREAh0YRW4UyETWDOhE3lTJZBJY6UQc1UQCZKkEeiSoRAoEmEUiFMhEvlTVgAoY6EQc1EQCWNV4AmSNaACplA5EpZgOWOl4GPl4GQV4MiSMRACoRgS2FNRFuhjoRAJY6UQKTPmAAlTVWAP8FA2xhcwWGNREAljVRAJkqQR6JKhEdgSkRQIU1ERyDPhEClTVeAIY6EQCXPlcHhjURAJY1bQCXQWEAmShkACpmAZEmZgSXRmEBljptBIY+EQKWPm0EhkERApZBbQyJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhEShTURIJU3VQSTQWUA/wUEdGlnIFaFNxEjg0ERHJY6UQSVNWYDgSYRAJEwcwCWNVEAmSpBHokqESTjAD8MADoCgTARCOMANgwANAOFNREHjDURADoRAD4RAOMAMAoALgsALAsAKguGOhEHlTNjAIY1EQCWN14AmSNaACpmAJw3SwA6TQA/SwGTQWUA/wUDdmFsAZEnaASWOl4GP14GQ14MiSMRACoRBuMAMgsANgsAPA0AQGSFMxGBDJUzVQKGOhEAljpRB4Y3EQCWN1EAmSpNDINBERKJKhEWgScRHoUzEUSVN10DhjoRAJc6YQeTP1sAhjcRAJY3bQCXP1gAmShkACpmAP8FBGxlbiADkStqApdDYQGWOm0Ehj8RApY/bQSGQxEClkNtDIkoEQAqET2GNxEGOhEBhzoRBYY/EQKHPxEDgz8RAoZDEQCHQxFbhTcRbJU3WQSWOlEEk0NpAP8FBHpvdSAA/wUBDQOWN1EAmSpBHokqEQKBKxFIhTcRL5U6YAKGOhEDlDpdAkNcAj9cAIY3EQCWN14AmSNaACpkA5EuZgOWOl4GP14GQ14MiSMRACoRgRGzAQMLAQkMAQ4FhToRBbMBEgsBFgoBGwsBHwwBIQoBJgsBKgwBLQoBMA4BMwSGOhEAljpRApU6VgWGNxEAljdRAJkqQQCzATcLAToLAT0IiSoRA7MBPwoBQgsBRAWBLhEGswFHCwFJCwFLCgFNCwFPCwFRBIU6ERKzAVIMlTdeAIY6EQCXOlcFswFTAoY3EQCWN20Alz9hAJkoZAAqZgGRK2YEl0NhAZY6bQSGPxEClj9tBIZDEQKWQ20DswFVCYkoEQAqEQuzAVcyhjcRBLMBWAKGOhEBhzoRBYY/EQKHPxEFhkMRAIdDETLlcGRWswFXBoU3ERCzAVULAVMKAVINAU8JAU0CljpRBJU6ZgOWN1EAmSpBAOUAQASzAUkJAUQJ5AA/A7MBPwWJKhED5AA8AYNDEQCzATgK5AA4ArMBMAnkADIBswEqCeQALgKzASEEgSsRBeQAKgGzARsL5AAkArMBEwjkAB8DswEMAoU6EQfkABsCswEDB+QAGQSzAQAI5AAVEAARA4RDEQE/EQKGOhEElEZhA0NhAJUzYwCGNxEAljdeAJkjWgAqZgKRJ2gEljpeBj9eBkNeDIkjEQAqEQzkABMKABcLABkLAB0LACIKACYLACwLADALADYLADoLAD4KAEALhTMRgQyVM1UChjoRAJY6UQeGNxEAljdRAJkqTR6JKhEWgScRHoUzEUSVN10DhjoRAJc6YQeGNxEAljdtAJc/WACZKGQAKmYDkStqApdDYQGWOm0Ehj8RApY/bQSGQxEClkNtDIkoEQAqET2GNxEGOhEBhzoRBYY/EQKHPxEFhkMRAIdDEQqwB04AsQdOALMHZAC0B0YAtQdTALYHOAC3B0YAuQdKALwHNFGFNxFslTdZBJY6UQc3UQCZKkEeiSoRAoErESS0AQEJAQMLAQULAQkFhTcRBrQBCwsBDg8BEw0BFQKVOmAChjoRBJNBVwD/BQVNYWFyIAK0ARgBhjcRAJY3XgCZI1oAKmEDkS5mA5Y6XgW0ARkBlj9eBkNeA7QBHQmJIxEAKhECtAEfDAEgCQEhCwEjFgElCwEmCgEoCwEqDQErCQEtFgEvCgEwFwEyCIU6EQK0ATMWATUVATcVATgLAToNATsLAT0JhjoRAJY6UQKVOlYAtAE/BYY3EQCWN1EAmS5JELQBQAwBQgKJLhEItAFECwFGCYNBEQGBLhECtAFHCQFJFgFLGAFNB4U6EQewB0MAsQdDALMHVgC0BzwAtQdHALYHMAC3BzwAuQc/ALwHLQ+0AU8IlTdeAIY6EQCXOlcCtAFRBZNBXACGNxEAljdtAJc/YQCZKGQAKmYA/wUFdG9jaCABkStmBJdDYQGWOm0Ehj8RApY/bQSGQxEAtAFSApZDbQm0AVMDiSgRACoRE7QBVSqGNxEBtAFXBYY6EQGHOhEFhj8RAoc/EQWGQxEAh0MRJ4NBEQi0AVMD5XBkB7QBUgwBTwoBSwsBRAsBPwoBNwsBLwsBJQmFNxECtAEbCwESCgEHDgEAEOMAPgiWOlEElTpmA5Y3UQCZKkEA5QBAB+MAOgEANhUANAGJKhEA4wAyEgAwAQAuFoErEQOEOhES4wAwC4U6EQeMNxEAOhEAPxEC4wAyAQA0EYRGEQNDEQHjADgBAD4ShjoRAOMAQAaTSGEA/wUDaXMgAZU1YwCGNxEAljleAJkjWgAqZgCcNUsAOUsAPE0CkSloBJY8XgZBXgZFXgyJIxEAKhGBDYU1ERyDSBFlsAc4ALEHOACzB0cAtAcyALUHOwC2BygAtwcyALkHNQC8ByULlTVVAoY8EQCWPFEHhjkRAJY5UQCZKk0eiSoRFoEpER6FNRFElTldA4Y8EQCXPGEGk0hfAP8FA2VyIAGGOREAljltAJdBWACZKGQAKmYDkS1qApdFYQGWPG0EhkERApZBbQSGRREClkVtDIkoEQAqET2GOREGPBEBhzwRBYZBEQKHQREFhkURAIdFEVuFOREtg0gRP5U5WQSWPFEFk0VkAP8FBWlldHMgApY5UQCZKkEeiSoRAoEtEUiFOREvlTxgAoY8EQGDRREGhjkRAJY5XgCZI1oAKmEDkTBmA5Y8XgZBXgZFXgyJIxEAKhF4sActALEHLQCzBzkAtAcoALUHLwC2ByAAtwcoALkHKgC8Bx41hTwRboY8EQCWPFEClTxWBYY5EQCWOVEAmSpBHokqER2BMBFAhTwRHpU5XgCGPBEAlzxXB4Y5EQCWOW0Al0FhAJkoZAAqZgGRLWYEl0VhAZY8bQSGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URgQ6FORE9ljxRBJU8ZgOBLREAkTBzAJNBXwCWOVEAmSpBAP8FBGRhdCAeiSoRMoEwERWDQREChTwRMoY8EQewByEAsQchALMHKwC0Bx4AtQcjALYHGAC3Bx4AuQcfALwHFgCVNWMAhjkRAJY5XgCZI1oAKmYBkz9kAP8FA2lrIAGRKWgEljxeBkFeBkVeDIkjEQAqEYENhTUREYM/EXuVNVUChjwRAJY8UQaTPGEA/wUDamUgAYY5EQCWOVEAmSpNHokqERaBKREehTURRJU5XQOGPBEAlzxhB4Y5EQCWOW0Al0FYAJkoZAAqZgORLWoCl0VhAZY8bQSGQREClkFtBIM8EQCGRREClkVtDIkoEQAqET2GOREGPBEBhzwRBYZBEQKHQREFhkURAIdFEVuFORFslTlZBJY8UQc5UQCZKkEKsAcWALEHFgCzBxwAtAcUALUHFwC2BxAAtwcUALkHFQC8Bw8UiSoRAoEtEUiFOREvlTxgAoY8EQc5EQCWOV4AmSNaACpgA5EwZgOWPF4GQV4GRV4MiSMRACoRgS2FPBFuhjwRAJY8UQKVNVYEkz9nAP8FBG5vZyABhjkRAJY5UQCZKkEeiSoRHYEwEUCFNREelTdeAIY8EQCXPFcHhjkRAJY5bQCXQWEAmShkACpmAZEpZgGDPxEDl0VhAZY8bQSGQREClkFtBIZFEQKWRW0MiSgRACoRPYY5EQY8EQGHPBEFhkERAodBEQWGRREAh0URRrAHCwCxBwsAswcOALQHCgC1BwsAtgcIALcHCgC5BwoAvAcHSIU3ET2WPFEElTlmAZM/ZQD/BQN2ZXICljlRAJkqQR6JKhEpgSkRBeMAPAaDPxEF4wA2DAAyBIU5EQbjADABjDURADkRADwRCeMALAsAKgsAKAyGPBEHkz9hAJU6YwCWNV4AhjkRAJkjWgAqZgCcNUsAOk0APksA/wUDdGVsApEiaASWOl4GPl4GQV4A4wAsCwAuAYkjEQAqEQnjADQNADoLAD8LAEBhhToRWIM/ETSVOlUChjoRAJY6UQWTPmIA/wUEbGVuIAKGNREAljVRAJkqTR6JKhEWgSIRHoU6ET+DPhEFlTJdA4Y6EQCXPmEHhjURAJY1bQCXQVgAmShkACpmA5EmagKXRmEBljptBIY+EQKWPm0EhkERApZBbQywBwAAsQcAALMHAAC0BwAAtQcAALYHAAC3BwAAuQcAALwHAACJKBEAKhE9hjURBjoRAYc+EQWGPhECh0ERBYZBEQCHRhFbhTIRbJUyWQSWOlEDk0FnAP8FBHdvdSAA/wUBDQSWNVEAmSpBHokqEQKBJhFIhTIRL5U1YAKGOhEDlEFdBD5cAIY1EQCWNV4AmSNaACphA5EpZgOWOl4GPl4GQV4MiSMRACoRD7MBAgoBBwoBDAsBEgsBFgwBGwoBHwoBIQsBJQsBKAsBKwsBLwoBMgsBMwsBNwiFNREDswE6CwE9CgE/CwFCCwFGCwFJDAFLCQFNCwFPDQFSCIY6EQCWOlEClTVWAbMBUwSGNREAljVRAJkqQQezAVUVAVcCiSoRHYEpEQCDQUAAhD5AAEFAAIU1QACGNUAAOkAAPkAAQUAAjDVAADpAAD5AALB4AAB7AACxeAAAewAAs3gAAHsAALR4AAB7AAC1eAAAewAAtngAAHsAALd4AAB7AAC5eAAAewAAvHgAAHsABf8vAA==";
+
+function parseMidi(buf) {
+  const d = new DataView(buf.buffer);
+  let p = 0;
+  const str = (n) => { let s=''; for (let i=0;i<n;i++) s += String.fromCharCode(buf[p++]); return s; };
+  const u32 = () => { const v=d.getUint32(p); p+=4; return v; };
+  const u16 = () => { const v=d.getUint16(p); p+=2; return v; };
+  if (str(4) !== 'MThd') throw new Error('Geen MIDI');
+  u32(); u16(); const ntr = u16(); const div = u16();
+  const evs = []; // {tick, order, kind, ...}
+  let order = 0;
+  for (let t=0;t<ntr;t++) {
+    if (str(4) !== 'MTrk') throw new Error('Track fout');
+    const len = u32(), end = p+len;
+    let tick = 0, run = 0;
+    const vlq = () => { let v=0,b; do { b=buf[p++]; v=(v<<7)|(b&127); } while (b&128); return v; };
+    while (p < end) {
+      tick += vlq();
+      let st = buf[p];
+      if (st & 0x80) { p++; if (st < 0xF0) run = st; } else st = run;
+      if (st === 0xFF) {
+        const type = buf[p++], l = vlq(); const s = p; p += l;
+        if (type === 0x51) evs.push({tick, order:order++, k:'tempo', v:(buf[s]<<16)|(buf[s+1]<<8)|buf[s+2]});
+        else if (type === 0x01 || type === 0x05) {
+          let txt=''; for (let i=0;i<l;i++) txt += String.fromCharCode(buf[s+i]);
+          evs.push({tick, order:order++, k:'text', type, v:txt});
+        }
+      } else if (st === 0xF0 || st === 0xF7) { const l = vlq(); p += l; }
+      else {
+        const ch = st & 15, c = st & 0xF0, a = buf[p++];
+        const b = (c===0xC0||c===0xD0) ? 0 : buf[p++];
+        evs.push({tick, order:order++, k:'ch', c, ch, a, b});
+      }
+    }
+    p = end;
+  }
+  evs.sort((x,y)=> x.tick-y.tick || x.order-y.order);
+  // tijden en noten
+  let tempo = 500000, lastTick = 0, time = 0;
+  const prog = new Array(16).fill(0), vol = new Array(16).fill(100), expr = new Array(16).fill(127);
+  const open = {}, notes = [], lyrics = [];
+  for (const e of evs) {
+    time += (e.tick - lastTick) * tempo / div / 1e6; lastTick = e.tick;
+    if (e.k === 'tempo') tempo = e.v;
+    else if (e.k === 'text') {
+      if (e.tick > 0 && !e.v.startsWith('@')) lyrics.push({t:time, text:e.v});
+    } else {
+      const {c,ch,a,b} = e;
+      if (c === 0xC0) prog[ch] = a;
+      else if (c === 0xB0) { if (a===7) vol[ch]=b; else if (a===11) expr[ch]=b; }
+      else if (c === 0x90 && b > 0) {
+        const key = ch*128+a;
+        if (open[key]) { open[key].dur = time - open[key].t; }
+        const n = {t:time, dur:0.3, ch, note:a, vel:b, prog:prog[ch], vol:vol[ch]/127*expr[ch]/127};
+        open[key] = n; notes.push(n);
+      } else if (c === 0x80 || (c === 0x90 && b === 0)) {
+        const key = ch*128+a;
+        if (open[key]) { open[key].dur = Math.max(0.03, time - open[key].t); delete open[key]; }
+      }
+    }
+  }
+  const total = Math.max(time, ...notes.map(n=>n.t+n.dur));
+  return {notes, lyrics, total};
+}
+
+
+let ctx, master, noiseBuf;
+function initAudio() {
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const comp = ctx.createDynamicsCompressor();
+  master = ctx.createGain(); master.gain.value = (+document.getElementById('midiVolume').value)/100;
+  master.connect(comp); comp.connect(ctx.destination);
+  noiseBuf = ctx.createBuffer(1, ctx.sampleRate*2, ctx.sampleRate);
+  const nd = noiseBuf.getChannelData(0);
+  for (let i=0;i<nd.length;i++) nd[i] = Math.random()*2-1;
+}
+const mtof = n => 440*Math.pow(2,(n-69)/12);
+
+function voiceParams(p) {
+  if (p < 8)   return {w:'triangle', a:.004, d:.9, s:0,   r:.15, f:6,  sus:false};
+  if (p < 16)  return {w:'sine',     a:.002, d:.6, s:0,   r:.2,  f:8,  sus:false};
+  if (p < 24)  return {w:'square',   a:.02,  d:0,  s:.6,  r:.08, f:3,  sus:true};
+  if (p < 32)  return {w:'sawtooth', a:.003, d:.5, s:0,   r:.12, f:4,  sus:false};
+  if (p < 40)  return {w:'sawtooth', a:.005, d:.25,s:.5,  r:.08, f:2.5,sus:true};
+  if (p < 56)  return {w:'sawtooth', a:.09,  d:0,  s:.8,  r:.2,  f:3,  sus:true};
+  if (p < 72)  return {w:'sawtooth', a:.04,  d:0,  s:.8,  r:.1,  f:4,  sus:true};
+  if (p < 80)  return {w:'sine',     a:.04,  d:0,  s:.8,  r:.1,  f:6,  sus:true};
+  if (p < 88)  return {w:'square',   a:.01,  d:0,  s:.7,  r:.1,  f:4,  sus:true};
+  return            {w:'sawtooth', a:.2,   d:0,  s:.7,  r:.3,  f:2.5,sus:true};
+}
+
+function playTone(n, when) {
+  const vp = voiceParams(n.prog), f = mtof(n.note);
+  const peak = Math.pow(n.vel/127, 1.4) * n.vol * 0.28;
+  const o = ctx.createOscillator(); o.type = vp.w; o.frequency.value = f;
+  const lp = ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value = Math.min(f*vp.f+400, 14000);
+  const g = ctx.createGain();
+  o.connect(lp); lp.connect(g); g.connect(master);
+  const dur = n.dur;
+  g.gain.setValueAtTime(0.0001, when);
+  g.gain.linearRampToValueAtTime(peak, when+vp.a);
+  let end;
+  if (vp.sus) {
+    g.gain.linearRampToValueAtTime(peak*vp.s, when+vp.a+0.05);
+    const off = when + Math.max(dur, vp.a+0.06);
+    g.gain.setValueAtTime(peak*vp.s, off);
+    g.gain.exponentialRampToValueAtTime(0.0001, off+vp.r);
+    end = off+vp.r;
+  } else {
+    const decay = vp.d;
+    g.gain.exponentialRampToValueAtTime(0.0001, when + vp.a + decay);
+    end = when + vp.a + decay + .05;
+  }
+  o.start(when); o.stop(end);
+}
+
+function noise(when, dur, type, freq, q, gainV) {
+  const s = ctx.createBufferSource(); s.buffer = noiseBuf;
+  const f = ctx.createBiquadFilter(); f.type=type; f.frequency.value=freq; f.Q.value=q||1;
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(gainV, when); g.gain.exponentialRampToValueAtTime(0.0001, when+dur);
+  s.connect(f); f.connect(g); g.connect(master);
+  s.start(when, Math.random()); s.stop(when+dur+.02);
+}
+function thump(when, f0, f1, dur, gainV) {
+  const o = ctx.createOscillator(); o.type='sine';
+  o.frequency.setValueAtTime(f0, when); o.frequency.exponentialRampToValueAtTime(f1, when+dur);
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(gainV, when); g.gain.exponentialRampToValueAtTime(0.0001, when+dur);
+  o.connect(g); g.connect(master); o.start(when); o.stop(when+dur+.02);
+}
+function playDrum(n, when) {
+  const v = Math.pow(n.vel/127,1.3) * n.vol;
+  const k = n.note;
+  if (k===35||k===36) thump(when, 160, 45, .25, .9*v);
+  else if (k===38||k===40||k===37) { noise(when,.18,'bandpass',2500,.8,.5*v); thump(when,220,120,.1,.35*v); }
+  else if (k===39) noise(when,.15,'bandpass',1800,1,.5*v);
+  else if (k===42||k===44) noise(when,.05,'highpass',7000,1,.3*v);
+  else if (k===46) noise(when,.3,'highpass',7000,1,.3*v);
+  else if (k===49||k===51||k===52||k===55||k===57||k===59) noise(when,1,'highpass',6000,1,.3*v);
+  else if (k>=41 && k<=50) thump(when, 80+ (k-41)*18, 50+(k-41)*8, .3, .7*v);
+  else noise(when,.06,'bandpass',4000,2,.3*v);
+}
+
+
+  // ---------- Speler ----------
+  const song = parseMidi(Uint8Array.from(atob(MIDI_B64), c => c.charCodeAt(0)));
+  const $ = id => document.getElementById(id);
+  const btn = $('midiPlay'), stopBtn = $('midiStop'), vol = $('midiVolume'), status = $('midiStatus');
+  let startAt = 0, ni = 0, timer = null, playing = false, starting = false, startedOnce = false;
+  const LOOK = 0.4;
+
+  function tick() {
+    if (!ctx) return;
+    const now = ctx.currentTime - startAt;
+    while (ni < song.notes.length && song.notes[ni].t < now + LOOK) {
+      const n = song.notes[ni++], when = Math.max(startAt + n.t, ctx.currentTime);
+      if (n.ch === 9) playDrum(n, when); else playTone(n, when);
+    }
+    if (now > song.total + 0.8) {
+      if (loop) begin(); else stop(true);
+    }
+  }
+  const loop = true; // muziek herhaalt zichzelf
+  function begin() { ni = 0; startAt = ctx.currentTime + 0.15; }
+  async function play() {
+    if (playing || starting) return;
+    starting = true;
+    if (!ctx) initAudio();
+    try { await ctx.resume(); } catch (e) {}
+    starting = false;
+    if (!ctx || ctx.state !== 'running') return;
+    playing = true; begin();
+    timer = setInterval(tick, 25);
+    btn.textContent = '\u275A\u275A'; btn.title = 'Pauze';
+    status.textContent = '';
+  }
+  function stop(ended) {
+    playing = false;
+    if (timer) clearInterval(timer); timer = null;
+    if (ctx) { try { ctx.close(); } catch (e) {} ctx = null; }
+    btn.textContent = '\u25B6'; btn.title = 'Afspelen';
+  }
+  btn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; playing ? stop() : play(); });
+  stopBtn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; stop(); });
+  vol.addEventListener('input', () => { if (master) master.gain.value = vol.value / 100; });
+  vol.addEventListener('click', e => e.stopPropagation());
+
+  // Autoplay: probeer meteen; browsers blokkeren dat meestal, dus start ook bij de eerste klik/tik/toets.
+  const kick = () => {
+    if (startedOnce) return;
+    startedOnce = true;
+    play();
+  };
+  ['pointerdown', 'keydown', 'touchend'].forEach(t => document.addEventListener(t, function h(e) {
+    if (e.target.closest && e.target.closest('#muziek')) return; // eigen knoppen regelen zichzelf
+    kick();
+  }, true));
+  (async () => { if (!ctx) initAudio(); try { await ctx.resume(); } catch (e) {} if (ctx && ctx.state === 'running') { startedOnce = true; play(); } })();
+})();
+</script>
+
+</body>
+
+</html>
