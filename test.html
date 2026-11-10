@@ -390,7 +390,8 @@ Laatste update: 17 juli 2026
 (() => {
   const knop = document.getElementById('persoonlijk');             // rode knop -> "Café zonder bier"
   const contact = document.querySelector('.menu a[href="#contact"]'); // Contact -> "Draai 797204"
-  let w1 = null, w2 = null, p1 = false, p2 = false, startedOnce = false;
+  const START_DRAAI_MS = 10000;   // "Draai 797204" begint op 10 seconden
+  let w1 = null, w2 = null, p1 = false, p2 = false, startedOnce = false, wacht10 = false;
 
   // Rode knop: tijdens het afspelen uitgeschakeld, daarna mag de bezoeker opnieuw klikken.
   function setKnop(klaar) {
@@ -411,7 +412,14 @@ Laatste update: 17 juli 2026
     }
     if (!w2) {
       w2 = SC.Widget(document.getElementById('sc-player-2'));
-      w2.bind(E.PLAY,   () => { p2 = true; startedOnce = true; if (p1 && w1) w1.pause(); });
+      w2.bind(E.PLAY,   () => {
+        p2 = true; startedOnce = true; if (p1 && w1) w1.pause();
+        if (wacht10) w2.seekTo(START_DRAAI_MS);
+      });
+      // Volume gaat pas open als het nummer op 10 s staat (zo hoor je de eerste seconden niet).
+      w2.bind(E.PLAY_PROGRESS, e => {
+        if (wacht10 && e.currentPosition >= START_DRAAI_MS - 500) { wacht10 = false; w2.setVolume(100); }
+      });
       w2.bind(E.PAUSE,  () => { p2 = false; });
       w2.bind(E.FINISH, () => { p2 = false; });
     }
@@ -429,8 +437,11 @@ Laatste update: 17 juli 2026
     init();
     if (!w2 || p2) return;
     if (p1 && w1) w1.pause();
-    w2.setVolume(100);
+    wacht10 = true;
+    w2.setVolume(0);
     w2.play();
+    // Vangnet: lukt het springen niet, zet dan toch het geluid aan.
+    setTimeout(() => { if (wacht10) { wacht10 = false; w2.setVolume(100); } }, 2500);
   }
 
   if (knop) knop.addEventListener('click', speelCafe);
