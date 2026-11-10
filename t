@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welkom bij Boekhoudkantoor VDM International</title>
+
+<style>
+
+body {
+    background: #000066;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.page {
+    width: auto;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: auto;
+    background: white;
+    border: 8px ridge silver;
+    padding: 5px;
+}
+
+.header {
+    background: linear-gradient(#0000cc,#000066);
+    color: yellow;
+    text-align:center;
+    padding:20px;
+    border:4px outset silver;
+}
+
+.header h1 {
+    font-size:36px;
+    text-shadow:3px 3px red;
+}
+
+.blink {
+    color:red;
+    font-weight:bold;
+}
+
+.menu {
+    background:#cccccc;
+    border:3px outset white;
+    padding:10px;
+    text-align:center;
+}
+
+.menu a {
+    display:inline-block;
+    background:#000080;
+    color:white;
+    padding:6px 15px;
+    margin:4px;
+    border:3px outset silver;
+    text-decoration:none;
+}
+
+.menu a:active {
+    border:3px inset silver;
+}
+
+
+.box {
+    margin:15px;
+    padding:10px;
+    border:5px ridge #999;
+    background:#ffffcc;
+}
+
+
+h2 {
+    color:#000099;
+    text-decoration:underline;
+}
+
+
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+td {
+    border:2px solid blue;
+    padding:8px;
+}
+
+
+.warning {
+    background:red;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+
+.counter {
+    background:black;
+    color:lime;
+    font-family:"Courier New";
+    padding:5px;
+    display:inline-block;
+}
+
+
+.footer {
+    background:#cccccc;
+    text-align:center;
+    padding:15px;
+    border-top:5px ridge silver;
+    font-size:12px;
+}
+
+
+/* Rode knop: duidelijk zichtbaar, op telefoon over de volle breedte */
+.mededeling-knop {
+    background-color: #CC0000;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(255,255,255,.7), 0 3px 8px rgba(0,0,0,.5);
+    animation: puls 1.8s ease-out infinite;
+}
+.mededeling-knop:disabled { animation: none; }
+@keyframes puls {
+    0%   { box-shadow: 0 0 0 0 rgba(255,255,255,.7), 0 3px 8px rgba(0,0,0,.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(255,255,255,0), 0 3px 8px rgba(0,0,0,.5); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0), 0 3px 8px rgba(0,0,0,.5); }
+}
+@media (prefers-reduced-motion: reduce) { .mededeling-knop { animation: none; } }
+
+/* Telefoon: bijna volle breedte, smalle blauwe rand */
+@media (max-width: 800px) {
+    body { margin: 0; }
+    .page { border-width: 3px; padding: 2px; }
+    .box { margin: 6px 0; padding: 8px; border-width: 3px; }
+    .header { padding: 12px 8px; }
+    .header h1 { font-size: 22px; }
+    .mededeling-knop { display: block; width: 100%; box-sizing: border-box; font-size: 21px; line-height: 1.3; padding: 18px 12px; }
+    .menu { padding: 6px; }
+    .menu a { padding: 6px 10px; margin: 3px; }
+    td { padding: 6px; }
+    img { max-width: 100%; height: auto; }
+}
+
+/* SoundCloud-spelers: onzichtbaar, maar wel actief (geen display:none, anders blokkeert de browser het geluid) */
+.speler {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 300px;
+    opacity: 0;
+    pointer-events: none;
+}
+.speler iframe { display: block; width: 100%; height: 166px; border: 0; }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<div class="header">
+
+<h1>
+BOEKHOUDKANTOOR VDM INTERNATIONAL
+</h1>
+
+<marquee>
+Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
+</marquee>
+
+<p>
+<button type="button" id="persoonlijk" class="mededeling-knop">
+    🎧 Klik en luister naar Herman's persoonlijke mededeling
+</button>
+</p>
+
+</div>
+
+
+
+<div class="menu">
+
+<a href="#diensten">📚 Diensten</a>
+
+<a href="#software">💻 Software</a>
+
+<a href="#prijzen">💰 Prijzen</a>
+
+<a href="#contact">✉ Contact</a>
+
+</div>
+
+<div class="speler">
+<iframe id="sc-player"
+  width="100%" height="166" scrolling="no" frameborder="no"
+  allow="autoplay"
+  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bobbejaan-schoepen/caf-zonder-bier-original-1959&color=%23f2a33a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
+</iframe>
+<iframe id="sc-player-2"
+  width="100%" height="166" scrolling="no" frameborder="no"
+  allow="autoplay"
+  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/will-tura/draai-797204&color=%23f2a33a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
+</iframe>
+</div>
+
+<div class="box">
+
+<h2>Welkom bezoeker!</h2>
+
+<p>
+
+Wij helpen zelfstandigen, KMO's en VZW's 
+met een correcte en betaalbare boekhouding.
+
+</p>
+
+<div class="warning">
+★★★ ACTIE VAN DE MAAND ★★★<br>
+Bij elke boeking een gratis Primus 33cl!
+</div>
+
+</div>
+
+
+
+
+<div class="box" id="diensten">
+
+<h2>Onze diensten</h2>
+
+
+<table>
+
+<tr>
+<td>✔ Dubbele boekhouding</td>
+<td>✔ BTW-aangiften</td>
+</tr>
+
+<tr>
+<td>✔ Jaarrekeningen</td>
+<td>✔ Administratieve hulp</td>
+</tr>
+
+<tr>
+<td>✔ Facturatie</td>
+<td>✔ Odoo ondersteuning</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+<div class="box" id="software">
+
+<h2>Onze softwarekennis</h2>
+
+
+<ul>
+
+<li>Microsoft Office</li>
+<li>Exact Online</li>
+<li>Odoo</li>
+<li>Business Central</li>
+<li>Yuki</li>
+
+</ul>
+
+
+<p>
+<img src="https://dummyimage.com/88x31/000/fff&text=HTML+4.0">
+<img src="https://dummyimage.com/88x31/000/fff&text=Netscape">
+<img src="https://dummyimage.com/88x31/000/fff&text=Best+View">
+</p>
+
+
+</div>
+
+
+
+
+<div class="box" id="prijzen">
+
+<h2>Onze prijzen</h2>
+
+
+<table>
+
+<tr>
+<td>Starter</td>
+<td>€ 75 / maand</td>
+</tr>
+
+<tr>
+<td>KMO</td>
+<td>Op aanvraag</td>
+</tr>
+
+<tr>
+<td>Consultancy</td>
+<td>€ 50 / uur</td>
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+<div class="box" id="contact">
+
+
+<h2>Contacteer ons</h2>
+
+<p>
+
+Boekhoudkantoor VDM International<br>
+Kerkstraat 25<br>
+3150 Haacht<br><br>
+
+☎ 012/34.56.78<br>
+✉ info@vdminternational.com
+
+</p>
+
+
+</div>
+
+
+
+
+<center>
+
+<p>
+
+Aantal bezoekers:
+
+<span class="counter">
+00012345
+</span>
+
+</p>
+
+
+<p class="blink">
+Deze website is geoptimaliseerd voor Netscape Navigator 4.0
+</p>
+
+
+</center>
+
+
+
+<div class="footer">
+
+<img src="https://dummyimage.com/120x40/ff0000/ffffff&text=UNDER+CONSTRUCTION">
+
+<br><br>
+
+© 2026 Boekhoudkantoor VDM International<br>
+
+Laatste update: 17 juli 2026
+
+</div>
+
+
+
+</div>
+
+
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+(() => {
+  const knop = document.getElementById('persoonlijk');
+  const contact = document.querySelector('.menu a[href="#contact"]');
+  let w1 = null, w2 = null, p1 = false, p2 = false, startedOnce = false;
+
+  // Rode knop: tijdens het afspelen uitgeschakeld, daarna mag de bezoeker opnieuw klikken.
+  function setKnop(klaar) {
+    if (!knop) return;
+    knop.disabled = !klaar;
+    knop.style.opacity = klaar ? '1' : '0.6';
+    knop.style.cursor = klaar ? 'pointer' : 'default';
+  }
+
+  function init() {
+    if (!window.SC) return;
+    const E = SC.Widget.Events;
+    if (!w1) {
+      w1 = SC.Widget(document.getElementById('sc-player'));
+      w1.bind(E.PLAY,   () => { p1 = true; startedOnce = true; setKnop(false); if (p2 && w2) w2.pause(); });
+      w1.bind(E.PAUSE,  () => { p1 = false; setKnop(true); });
+      w1.bind(E.FINISH, () => { p1 = false; setKnop(true); });
+    }
+    if (!w2) {
+      w2 = SC.Widget(document.getElementById('sc-player-2'));
+      w2.bind(E.PLAY,   () => { p2 = true; startedOnce = true; if (p1 && w1) w1.pause(); });
+      w2.bind(E.PAUSE,  () => { p2 = false; });
+      w2.bind(E.FINISH, () => { p2 = false; });
+    }
+  }
+
+  function speelCafe() {
+    init();
+    if (!w1 || p1) return;
+    if (p2 && w2) w2.pause();
+    w1.setVolume(100);
+    w1.play();
+  }
+
+  function speelDraai() {
+    init();
+    if (!w2 || p2) return;
+    if (p1 && w1) w1.pause();
+    w2.setVolume(100);
+    w2.play();
+  }
+
+  if (knop) knop.addEventListener('click', speelCafe);
+  if (contact) contact.addEventListener('click', speelDraai);
+
+  // Eerste tik/klik ergens anders op de pagina start "Café zonder bier"
+  // (telefoons laten geen geluid toe zonder tik). De Contact-knop heeft zijn eigen nummer.
+  document.addEventListener('click', e => {
+    if (startedOnce) return;
+    if (e.target.closest && e.target.closest('#persoonlijk, .menu a[href="#contact"]')) return;
+    speelCafe();
+  }, true);
+})();
+</script>
+
+</body>
+
+</html>
