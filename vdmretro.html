@@ -525,17 +525,19 @@ function playDrum(n, when) {
   const loop = false; // muziek speelt één keer en stopt daarna
   function begin() { ni = 0; startAt = ctx.currentTime + 0.15; }
   async function play() {
-    if (playing || starting) return;
+    if (playing) return true;
+    if (starting) return false;
     starting = true;
     if (!ctx) initAudio();
     try { await ctx.resume(); } catch (e) {}
     starting = false;
-    if (!ctx || ctx.state !== 'running') return;
+    if (!ctx || ctx.state !== 'running') return false; // telefoon blokkeert nog: volgende tik probeert opnieuw
     playing = true; begin();
     setMededeling(false);
     timer = setInterval(tick, 25);
     btn.textContent = '\u275A\u275A'; btn.title = 'Pauze';
     status.textContent = '';
+    return true;
   }
   function stop(ended) {
     playing = false;
@@ -553,8 +555,7 @@ function playDrum(n, when) {
     mededeling.style.cursor = klaar ? 'pointer' : 'default';
   }
   if (mededeling) mededeling.addEventListener('click', () => {
-    startedOnce = true;
-    if (!playing && !starting) play();
+    if (!playing && !starting) play().then(ok => { if (ok) startedOnce = true; });
   });
   btn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; playing ? stop() : play(); });
   stopBtn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; stop(); });
@@ -564,10 +565,11 @@ function playDrum(n, when) {
   // Autoplay: probeer meteen; browsers blokkeren dat meestal, dus start ook bij de eerste klik/tik/toets.
   const kick = () => {
     if (startedOnce) return;
-    startedOnce = true;
-    play();
+    // Pas "gestart" als het echt lukt; op een telefoon mislukt een eerste poging vaak.
+    play().then(ok => { if (ok) startedOnce = true; });
   };
-  ['pointerdown', 'keydown', 'touchend'].forEach(t => document.addEventListener(t, function h(e) {
+  // Op iPhone/Android telt alleen click of touchend als echte aanraking voor geluid (pointerdown niet).
+  ['click', 'keydown', 'touchend'].forEach(t => document.addEventListener(t, function h(e) {
     if (e.target.closest && e.target.closest('#muziek')) return; // eigen knoppen regelen zichzelf
     kick();
   }, true));
