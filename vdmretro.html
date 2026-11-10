@@ -150,7 +150,7 @@ Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
 </marquee>
 
 <p>
-<button style="
+<button type="button" id="persoonlijk" style="
     background-color: #CC0000;
     color: #FFFFFF;
     border: none;
@@ -533,6 +533,7 @@ function playDrum(n, when) {
     starting = false;
     if (!ctx || ctx.state !== 'running') return;
     playing = true; begin();
+    setMededeling(false);
     timer = setInterval(tick, 25);
     btn.textContent = '\u275A\u275A'; btn.title = 'Pauze';
     status.textContent = '';
@@ -542,7 +543,20 @@ function playDrum(n, when) {
     if (timer) clearInterval(timer); timer = null;
     if (ctx) { try { ctx.close(); } catch (e) {} ctx = null; }
     btn.textContent = '\u25B6'; btn.title = 'Afspelen';
+    setMededeling(true);
   }
+  // Rode knop: tijdens het afspelen uitgeschakeld, daarna mag de bezoeker opnieuw klikken.
+  const mededeling = $('persoonlijk');
+  function setMededeling(klaar) {
+    if (!mededeling) return;
+    mededeling.disabled = !klaar;
+    mededeling.style.opacity = klaar ? '1' : '0.6';
+    mededeling.style.cursor = klaar ? 'pointer' : 'default';
+  }
+  if (mededeling) mededeling.addEventListener('click', () => {
+    startedOnce = true;
+    if (!playing && !starting) play();
+  });
   btn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; playing ? stop() : play(); });
   stopBtn.addEventListener('click', e => { e.stopPropagation(); startedOnce = true; stop(); });
   vol.addEventListener('input', () => { if (master) master.gain.value = vol.value / 100; });
