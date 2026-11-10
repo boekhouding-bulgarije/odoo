@@ -156,8 +156,6 @@ td {
     left: -9999px;
     top: 0;
     width: 300px;
-    height: 166px;
-    overflow: hidden;
     opacity: 0;
     pointer-events: none;
 }
@@ -211,6 +209,11 @@ Uw financiële partner sinds 1998 - Boekhouding zonder zorgen!
   width="100%" height="166" scrolling="no" frameborder="no"
   allow="autoplay"
   src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bobbejaan-schoepen/caf-zonder-bier-original-1959&color=%23f2a33a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
+</iframe>
+<iframe id="sc-player-2"
+  width="100%" height="166" scrolling="no" frameborder="no"
+  allow="autoplay"
+  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/will-tura/draai-797204&color=%23f2a33a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false">
 </iframe>
 </div>
 
@@ -385,9 +388,9 @@ Laatste update: 17 juli 2026
 <script src="https://w.soundcloud.com/player/api.js"></script>
 <script>
 (() => {
-  const iframe = document.getElementById('sc-player');
-  const knop = document.getElementById('persoonlijk');
-  let widget = null, playing = false, startedOnce = false;
+  const knop = document.getElementById('persoonlijk');             // rode knop -> "Café zonder bier"
+  const contact = document.querySelector('.menu a[href="#contact"]'); // Contact -> "Draai 797204"
+  let w1 = null, w2 = null, p1 = false, p2 = false, startedOnce = false;
 
   // Rode knop: tijdens het afspelen uitgeschakeld, daarna mag de bezoeker opnieuw klikken.
   function setKnop(klaar) {
@@ -398,27 +401,47 @@ Laatste update: 17 juli 2026
   }
 
   function init() {
-    if (widget || !window.SC) return;
-    widget = SC.Widget(iframe);
-    widget.bind(SC.Widget.Events.PLAY,   () => { playing = true;  startedOnce = true; setKnop(false); });
-    widget.bind(SC.Widget.Events.PAUSE,  () => { playing = false; setKnop(true); });
-    widget.bind(SC.Widget.Events.FINISH, () => { playing = false; setKnop(true); });
+    if (!window.SC) return;
+    const E = SC.Widget.Events;
+    if (!w1) {
+      w1 = SC.Widget(document.getElementById('sc-player'));
+      w1.bind(E.PLAY,   () => { p1 = true; startedOnce = true; setKnop(false); if (p2 && w2) w2.pause(); });
+      w1.bind(E.PAUSE,  () => { p1 = false; setKnop(true); });
+      w1.bind(E.FINISH, () => { p1 = false; setKnop(true); });
+    }
+    if (!w2) {
+      w2 = SC.Widget(document.getElementById('sc-player-2'));
+      w2.bind(E.PLAY,   () => { p2 = true; startedOnce = true; if (p1 && w1) w1.pause(); });
+      w2.bind(E.PAUSE,  () => { p2 = false; });
+      w2.bind(E.FINISH, () => { p2 = false; });
+    }
   }
 
-  function speel() {
+  function speelCafe() {
     init();
-    if (!widget || playing) return;
-    widget.setVolume(100);
-    widget.play();
+    if (!w1 || p1) return;
+    if (p2 && w2) w2.pause();
+    w1.setVolume(100);
+    w1.play();
   }
 
-  if (knop) knop.addEventListener('click', speel);
+  function speelDraai() {
+    init();
+    if (!w2 || p2) return;
+    if (p1 && w1) w1.pause();
+    w2.setVolume(100);
+    w2.play();
+  }
 
-  // Eerste tik/klik ergens op de pagina start de muziek (telefoons laten geen geluid toe zonder tik).
+  if (knop) knop.addEventListener('click', speelCafe);
+  if (contact) contact.addEventListener('click', speelDraai);
+
+  // Eerste tik/klik ergens anders op de pagina start "Café zonder bier"
+  // (telefoons laten geen geluid toe zonder tik). De Contact-knop heeft zijn eigen nummer.
   document.addEventListener('click', e => {
     if (startedOnce) return;
-    if (e.target.closest && e.target.closest('#persoonlijk')) return;
-    speel();
+    if (e.target.closest && e.target.closest('#persoonlijk, .menu a[href="#contact"]')) return;
+    speelCafe();
   }, true);
 })();
 </script>
